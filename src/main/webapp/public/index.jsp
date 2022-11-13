@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/476aa9aedb.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/logo-alt.980da429.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" type="image/x-icon">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/style.home.css">
     <title>TripFinder Home</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/vendor/slick-1.8.1/slick/slick.css"/>
@@ -63,15 +63,15 @@
                         </ul>
                         <ul class="sign">
                             <li class="sign-item">
-                                <a href="${pageContext.request.contextPath}/public/sign_in/index.html" class="sign-item-link">Sign in</a>
+                                <a href="login" class="sign-item-link">Sign in</a>
                             </li>
                             <li class="sign-item">
-                                <a href="${pageContext.request.contextPath}/public/sign_in/signup.html" class="sign-item-link btn">Sign up</a>
+                                <a href="signup" class="sign-item-link btn">Sign up</a>
                             </li>
                         </ul>
                         <ul class="sign-success disable-user">
                             <li class="sign-success-img">
-                                <img src="${pageContext.request.contextPath}/public/Imgs/cairo.jpg" alt="">
+                                <img src="${pageContext.request.contextPath}/public/img/cairo.jpg" alt="">
                             </li>
                             <li class="sign-success-container disable-user">
                                 <ul class="user-panner">
@@ -130,14 +130,14 @@
                 <div class="explore-main">
                     <div class="explore-header">
                         <h1>Explore Destinations</h1>
-                        <a href="${pageContext.request.contextPath}/public/pages/list/listRoom.html" class="explore-link">Show all</a>
+                        <a href="${pageContext.request.contextPath}/public/listRoom.jsp" class="explore-link">Show all</a>
                     </div>
                     <div class="explore-slides">
                         <div class="explore-slider">
                             <img src="http://s3.amazonaws.com/redqteam.com/tripfinder-images/london.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="${pageContext.request.contextPath}/public/pages/list/listRoom.html"  class="explore-heading">London</a >
+                                <a href="${pageContext.request.contextPath}/public/pages/listRoom.jsp"  class="explore-heading">London</a >
                                 <h3 class="explore-number-hotel">49863 Hotels</h3>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                             <img src="${pageContext.request.contextPath}/public/img/newyork.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="${pageContext.request.contextPath}/public/pages/list/listRoom.html"  class="explore-heading">New York</a >
+                                <a href="${pageContext.request.contextPath}/public/pages/listRoom.jsp"  class="explore-heading">New York</a >
                                 <h3 class="explore-number-hotel">19236 Hotels</h3>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                             <img src="${pageContext.request.contextPath}/public/img/paris.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="${pageContext.request.contextPath}/public/pages/list/listRoom.html"  class="explore-heading">Paris</a >
+                                <a href="${pageContext.request.contextPath}/public/pages/listRoom.jsp"  class="explore-heading">Paris</a >
                                 <h3 class="explore-number-hotel">23494 Hotels</h3>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                 <div class="travel-main">
                     <div class="travel-header">
                         <h1>Travelers’ Choice: Top hotels</h1>
-                        <a href="${pageContext.request.contextPath}/public/pages/list/listRoom.html" class="travel-link">Show all</a>
+                        <a href="${pageContext.request.contextPath}/public/pages/listRoom.jsp" class="travel-link">Show all</a>
                     </div>
                     <div class="travel-place">
                         <div class="place">

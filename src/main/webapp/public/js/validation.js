@@ -1,5 +1,5 @@
 let userName = document.getElementById("username");
-let eMail = document.getElementById("email");
+let email = document.getElementById("email");
 let passWord = document.getElementById("password1");
 let passWord2 = document.getElementById("password2");
 let form = document.querySelector('form');
@@ -74,13 +74,13 @@ function getFieldName(input) {
 
 // Event listeners
 form.addEventListener('submit', function (e) {
-	e.preventDefault()
+	//e.preventDefault()
 
-	if (!checkRequired([userName, eMail, passWord, passWord2])) {
+	if (!checkRequired([userName, email, passWord, passWord2])) {
 		checkLength(userName)
 		checkLength(passWord, 6)
 		checkLength(passWord2, 6)
-		checkEmail(eMail)
+		checkEmail(email)
 		checkPasswordsMatch(passWord, passWord2)
 	}
 })

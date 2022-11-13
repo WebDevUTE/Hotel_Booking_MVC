@@ -31,7 +31,7 @@ public class HomeServlet extends HttpServlet {
 				.forward(request, response);
 	}
 	
-	static void loadHomePage(HttpServletRequest request) {
+	public static void loadHomePage(HttpServletRequest request) {
 		HotelDAO hotelDAO = new HotelDAO();
 		
 		List<Hotel> londonHotels;

@@ -58,10 +58,10 @@ function checkLength(input, min) {
 }
 // Event listeners
 formlg.addEventListener('submit', function (e) {
-	e.preventDefault()
+	//e.preventDefault()
 
 	if (!checkRequired([email, password])) {
 		checkLength(password, 6)
-		checkEmail(eMail)
+		checkEmail(email)
 	}
 })
