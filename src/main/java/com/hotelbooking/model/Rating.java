@@ -1,6 +1,7 @@
-// default package
-// Generated Nov 13, 2022, 12:55:12 AM by Hibernate Tools 4.3.6.Final
 package com.hotelbooking.model;
+// default package
+// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

@@ -1,4 +1,7 @@
 package com.hotelbooking.model;
+// default package
+// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -20,8 +23,10 @@ public class Agent implements java.io.Serializable {
 	private String bio;
 	private String coverImg;
 	private String avatarImg;
+	private String contactNum;
+	private String email;
+	private String address;
 	private Set<Hotel> hotels = new HashSet<Hotel>(0);
-	private Set<AgentContactInfo> agentContactInfos = new HashSet<AgentContactInfo>(0);
 
 	public Agent() {
 	}
@@ -30,15 +35,17 @@ public class Agent implements java.io.Serializable {
 		this.agentId = agentId;
 	}
 
-	public Agent(int agentId, String displayName, String bio, String coverImg, String avatarImg, Set<Hotel> hotels,
-			Set<AgentContactInfo> agentContactInfos) {
+	public Agent(int agentId, String displayName, String bio, String coverImg, String avatarImg, String contactNum,
+			String email, String address, Set<Hotel> hotels) {
 		this.agentId = agentId;
 		this.displayName = displayName;
 		this.bio = bio;
 		this.coverImg = coverImg;
 		this.avatarImg = avatarImg;
+		this.contactNum = contactNum;
+		this.email = email;
+		this.address = address;
 		this.hotels = hotels;
-		this.agentContactInfos = agentContactInfos;
 	}
 
 	@Id
@@ -88,6 +95,33 @@ public class Agent implements java.io.Serializable {
 		this.avatarImg = avatarImg;
 	}
 
+	@Column(name = "Contact_Num")
+	public String getContactNum() {
+		return this.contactNum;
+	}
+
+	public void setContactNum(String contactNum) {
+		this.contactNum = contactNum;
+	}
+
+	@Column(name = "Email")
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Column(name = "Address")
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "agent")
 	public Set<Hotel> getHotels() {
 		return this.hotels;
@@ -95,15 +129,6 @@ public class Agent implements java.io.Serializable {
 
 	public void setHotels(Set<Hotel> hotels) {
 		this.hotels = hotels;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "agent")
-	public Set<AgentContactInfo> getAgentContactInfos() {
-		return this.agentContactInfos;
-	}
-
-	public void setAgentContactInfos(Set<AgentContactInfo> agentContactInfos) {
-		this.agentContactInfos = agentContactInfos;
 	}
 
 }

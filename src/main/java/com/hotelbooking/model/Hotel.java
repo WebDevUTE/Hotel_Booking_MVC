@@ -1,5 +1,7 @@
-// default package
 package com.hotelbooking.model;
+// default package
+// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -30,8 +32,12 @@ public class Hotel implements java.io.Serializable {
 	private Destination destination;
 	private String hotelName;
 	private String imageUrl;
+	private String description;
+	private String location;
+	private String address;
+	private Long price;
+	private Integer rooms;
 	private Set<Rating> ratings = new HashSet<Rating>(0);
-	private Set<HotelDetail> hotelDetails = new HashSet<HotelDetail>(0);
 
 	public Hotel() {
 	}
@@ -41,15 +47,20 @@ public class Hotel implements java.io.Serializable {
 	}
 
 	public Hotel(Agent agent, Booking booking, Category category, Destination destination, String hotelName,
-			String imageUrl, Set<Rating> ratings, Set<HotelDetail> hotelDetails) {
+			String imageUrl, String description, String location, String address, Long price, Integer rooms,
+			Set<Rating> ratings) {
 		this.agent = agent;
 		this.booking = booking;
 		this.category = category;
 		this.destination = destination;
 		this.hotelName = hotelName;
 		this.imageUrl = imageUrl;
+		this.description = description;
+		this.location = location;
+		this.address = address;
+		this.price = price;
+		this.rooms = rooms;
 		this.ratings = ratings;
-		this.hotelDetails = hotelDetails;
 	}
 
 	@GenericGenerator(name = "generator", strategy = "foreign", parameters = @Parameter(name = "property", value = "booking"))
@@ -123,6 +134,51 @@ public class Hotel implements java.io.Serializable {
 		this.imageUrl = imageUrl;
 	}
 
+	@Column(name = "Description")
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Column(name = "Location")
+	public String getLocation() {
+		return this.location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	@Column(name = "Address")
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	@Column(name = "Price", precision = 10, scale = 0)
+	public Long getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+
+	@Column(name = "Rooms")
+	public Integer getRooms() {
+		return this.rooms;
+	}
+
+	public void setRooms(Integer rooms) {
+		this.rooms = rooms;
+	}
+
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hotel")
 	public Set<Rating> getRatings() {
 		return this.ratings;
@@ -130,15 +186,6 @@ public class Hotel implements java.io.Serializable {
 
 	public void setRatings(Set<Rating> ratings) {
 		this.ratings = ratings;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hotel")
-	public Set<HotelDetail> getHotelDetails() {
-		return this.hotelDetails;
-	}
-
-	public void setHotelDetails(Set<HotelDetail> hotelDetails) {
-		this.hotelDetails = hotelDetails;
 	}
 
 }

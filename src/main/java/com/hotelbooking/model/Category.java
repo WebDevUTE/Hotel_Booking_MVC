@@ -1,14 +1,13 @@
-// default package
-// Generated Nov 13, 2022, 12:55:12 AM by Hibernate Tools 4.3.6.Final
 package com.hotelbooking.model;
+// default package
+// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,34 +18,43 @@ import javax.persistence.Table;
 @Table(name = "category", catalog = "hotel_booking")
 public class Category implements java.io.Serializable {
 
-	private CategoryId id;
+	private int categoryId;
+	private String categoryName;
 	private Integer size;
 	private Set<Hotel> hotels = new HashSet<Hotel>(0);
 
 	public Category() {
 	}
 
-	public Category(CategoryId id) {
-		this.id = id;
+	public Category(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
-	public Category(CategoryId id, Integer size, Set<Hotel> hotels) {
-		this.id = id;
+	public Category(int categoryId, String categoryName, Integer size, Set<Hotel> hotels) {
+		this.categoryId = categoryId;
+		this.categoryName = categoryName;
 		this.size = size;
 		this.hotels = hotels;
 	}
 
-	@EmbeddedId
+	@Id
 
-	@AttributeOverrides({
-			@AttributeOverride(name = "categoryId", column = @Column(name = "Category_ID", nullable = false)),
-			@AttributeOverride(name = "categoryName", column = @Column(name = "Category_Name", nullable = false)) })
-	public CategoryId getId() {
-		return this.id;
+	@Column(name = "Category_ID", unique = true, nullable = false)
+	public int getCategoryId() {
+		return this.categoryId;
 	}
 
-	public void setId(CategoryId id) {
-		this.id = id;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	@Column(name = "Category_Name")
+	public String getCategoryName() {
+		return this.categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 	@Column(name = "Size")

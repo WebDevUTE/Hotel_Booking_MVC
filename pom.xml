@@ -6,6 +6,12 @@
 	<artifactId>Hotel_Booking</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
 	<build>
 		<testSourceDirectory>src/main/test</testSourceDirectory>
 		<plugins>

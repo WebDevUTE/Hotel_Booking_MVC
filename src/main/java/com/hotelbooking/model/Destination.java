@@ -1,6 +1,7 @@
-// default package
-// Generated Nov 13, 2022, 12:55:12 AM by Hibernate Tools 4.3.6.Final
 package com.hotelbooking.model;
+// default package
+// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -19,7 +20,6 @@ public class Destination implements java.io.Serializable {
 
 	private int destinationId;
 	private String desName;
-	private Integer hotelCount;
 	private String imageUrl;
 	private Set<Hotel> hotels = new HashSet<Hotel>(0);
 
@@ -30,10 +30,9 @@ public class Destination implements java.io.Serializable {
 		this.destinationId = destinationId;
 	}
 
-	public Destination(int destinationId, String desName, Integer hotelCount, String imageUrl, Set<Hotel> hotels) {
+	public Destination(int destinationId, String desName, String imageUrl, Set<Hotel> hotels) {
 		this.destinationId = destinationId;
 		this.desName = desName;
-		this.hotelCount = hotelCount;
 		this.imageUrl = imageUrl;
 		this.hotels = hotels;
 	}
@@ -56,15 +55,6 @@ public class Destination implements java.io.Serializable {
 
 	public void setDesName(String desName) {
 		this.desName = desName;
-	}
-
-	@Column(name = "Hotel_Count")
-	public Integer getHotelCount() {
-		return this.hotelCount;
-	}
-
-	public void setHotelCount(Integer hotelCount) {
-		this.hotelCount = hotelCount;
 	}
 
 	@Column(name = "Image_Url")
