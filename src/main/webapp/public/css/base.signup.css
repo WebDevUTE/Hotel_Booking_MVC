@@ -1,0 +1,14 @@
+:root {
+    --primary-color: rgb(0, 132, 137);
+    --while-color: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial;
+}
