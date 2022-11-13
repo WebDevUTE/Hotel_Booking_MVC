@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
-    <link rel="stylesheet" href="./css/base.singup.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.signup.css"/>
-    <link rel="shortcut icon" href="../Imgs/logo-alt.980da429.svg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/base.signup.css"/>
+    <link rel="stylesheet" href="./css/style.signup.css"/>
+    <link rel="shortcut icon" href="../img/logo-alt.980da429.svg" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet"/>
     <title>Sign up</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         <div class="modal__login">
             <div class="modal__logo">
                 <a href="" class="active__home">
-                    <img src="./assets/img/favicon.png" alt="logo">
+                    <img src="./img/favicon.png" alt="logo">
                     <h3>TripFinder.</h3>
                 </a>
             </div>
@@ -133,16 +133,16 @@
 
             <div class="modal__footer">
                 <p class="modal-no-account">Already Have an Account!</p>
-                <a href="./index.html" class="modal-register">Login</a>
+                <a href="./login.jsp" class="modal-register">Login</a>
             </div>
         </div>
 
         <div class="modal-img">
-            <div style="background-image: url(./assets/img/login-page-bg.eea21cfc.jpg);"></div>
+            <div style="background-image: url(./img/login-page-bg.eea21cfc.jpg);"></div>
         </div>
     </div>
 
-    <script src="./activePass.js"></script>
-    <script src="./validation.js"></script>
+    <script src="./js/activePass.js"></script>
+    <script src="./js/validation.js"></script>
 </body>
 </html>

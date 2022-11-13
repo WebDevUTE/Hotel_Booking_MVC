@@ -1,0 +1,275 @@
+
+
+.body {
+	overflow: hidden;
+}
+
+.modal {
+    width: 100%;
+    display: flex;
+}
+.modal__login {
+    width: 45%;
+    margin-top: 132px;
+    padding: 0 132px;
+}
+.modal__logo a {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.active__home {
+    text-decoration: none;
+}
+
+.active__home img {
+    width: 20px;
+    border-style: none;
+    
+}
+
+.active__home h3 {
+    color: rgb(0, 132, 137);
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0px 0px 0px 10px;
+}
+
+.modal__body-welcome {
+    color: rgb(44, 44, 44);
+    font-size: 32px;
+    line-height: 54px;
+    margin-top: 58px;
+    margin-bottom: 0px;
+}
+
+.modal__body-parheading {
+    color: rgb(119, 119, 119);
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 45px;
+    margin-top: 10px;
+}
+
+form .form-control {
+	position: relative;
+}
+
+.form-control .form-control-label {
+    display: block;
+    color: rgb(44, 44, 44);
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.form-control .label-input {
+    margin: 0;
+    list-style: none;
+    min-width: 375px;
+    min-height: 40px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    background-color: var(--while-color);
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 8px 12px;
+}
+
+.form-control.success {
+	border-bottom-color: #2691d9;
+}
+
+.form-control.error {
+	border-bottom-color: #e74c3c;
+}
+
+small {
+	position: absolute;
+	left: 0;
+	top: 70%;
+	margin-top: 3px;
+	color: #e74c3c;
+}
+
+.eye{
+    transform: translateY(-50%);
+    cursor: pointer;
+    max-width: 20px;
+    position: absolute;
+    top: 50px;
+    left: 344px;
+    padding-top: 2px;
+}
+
+.eye1{
+    transform: translateY(-50%);
+    cursor: pointer;
+    max-width: 20px;
+    position: absolute;
+    top: 56px;
+    left: 344px;
+}
+
+.eye2{
+    transform: translateY(-50%);
+    cursor: pointer;
+    max-width: 20px;
+    position: absolute;
+    top: 56px;
+    left: 344px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.modal__body-password {
+    display: flex;
+    align-items: center;
+    margin-bottom: 38px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    background-color: rgba(0,0,0,.25);
+    border-radius: 200px;
+}
+
+.btn-savepass {
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    color: rgb(44, 44, 44);
+    padding: 0px 8px;
+}
+
+.btn-forget {
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700; 
+    margin-left: 122px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.btn-primary{
+    list-style: none;
+    cursor: pointer;
+    width: 375px;
+    height: 58px;
+    border-radius: 2px;
+    border: 1px solid #d9d9d9;
+    background-color: var(--primary-color);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--while-color);
+    outline: none;
+}
+
+
+.modal__divider {
+    position: relative;
+    margin-top: 48px;
+    margin-bottom: 42px;
+    margin-left: 42px;
+}
+
+.modal__log-with {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(119, 119, 119);
+    margin-left: 100px;
+}
+.btn-row {
+    display: flex;
+}
+
+.btn-col-12 {
+    width: calc(100% - 50%);
+    margin-bottom: 18px;
+}
+
+.btn-element {
+    border-radius: 3px;
+    width: 180px;
+    height: 58px;
+    font-size: 15px;
+    font-weight: 700;
+    min-height: 48px;
+    cursor: pointer;
+}
+
+.facebook-btn {
+    border-color: rgb(59, 89, 152);
+    background-color: rgb(59, 89, 152);
+    border: 1px solid #d9d9d9;
+}
+.facebook-btn span {
+    color: var(--while-color);
+}
+
+.github-btn {
+    border-color: rgb(0, 172, 238);
+    background-color: rgb(0, 172, 238);    
+    border: 1px solid #d9d9d9;
+}
+.github-btn span {
+    color: var(--while-color);
+}
+
+.firebase-btn {
+    background: #1890ff;
+    border-color: #1890ff;
+    border: 1px solid #d9d9d9;
+}
+.firebase-btn {
+    color: var(--while-color);
+}
+
+.google-btn {
+    border-color: rgb(221, 75, 57);
+    background-color: rgb(221, 75, 57);
+    border: 1px solid #d9d9d9;
+}
+.google-btn span {
+    color: var(--while-color);
+}
+
+.modal__footer {
+    margin-top: 18px;
+    display: flex;
+    margin-bottom: 106px;
+    justify-content: center;
+}
+
+.modal-no-account {
+    margin: 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(119, 119, 119);
+    /* line-height: 1; */
+}
+
+.modal-register {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.modal-img {
+    width: 55%;
+}
+
+.modal-img div{
+    background-position: center center;
+    height: 100%;
+    background-size: cover;
+}
