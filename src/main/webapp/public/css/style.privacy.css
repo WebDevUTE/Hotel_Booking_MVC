@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.wrapper{
+    max-width: 2000px;
+    margin: 0 auto;
+}
+.container{
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.container-fluid{
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.header{
+    padding: 20px 0;
+    border-bottom: 1px solid #90909090;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100vw;
+}
+.header-main{
+    display: flex;
+}
+.header-menu{
+    flex: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header-menu h3{
+    font-size: 25px;
+}
+.header-navbar{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    align-items: center;
+}
+.menu{
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+.menu-item{
+    cursor: pointer;
+}
+.menu-item-link{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}
+.sign{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.sign-item-link{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}
+.sign-item-link.btn{
+    padding: 10px 20px;
+    background-color: #008489;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    color: white;
+
+}
+.sign-item-link.btn:hover{
+    background-color:#03999e;
+}
+.privacy{
+    margin-top:100px;
+}
+.privacy-header{
+    padding: 50px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+}
+.privacy-heading{
+    margin-bottom: 30px;
+}
+.privacy-header h3{
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.privacy-header p{
+    margin-bottom: 15px;
+}
+.privacy-header ol{
+    margin-bottom: 40px;
+    margin-left: 15px;
+}
+
+
+.sign-success li{
+    list-style: none;
+}
+.sign-success-img{
+    width: 100%;
+}
+.sign-success-img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.sign-success-container{
+    position: relative;
+}
+.user-panner{
+    background-color: white;
+    padding: 10px 20px;
+    width: max-content;
+    position: absolute;
+    top: 0;
+    right: 0px;
+}
+.user-panner-item{
+    padding: 10px 0;
+}
+.user-panner-item:first-child{
+    border-bottom: 1px solid black;
+}
+.user-panner-item-link{
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s ease;
+}
+.user-panner-item-link:hover{
+  font-size: 20px;
+}
+.disable-user{
+    display: none;
+}
