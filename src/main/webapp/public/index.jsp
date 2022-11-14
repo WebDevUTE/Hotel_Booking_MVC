@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,29 +62,33 @@
                                 <a href="privacy" class="menu-item-link">Privacy</a>
                             </li>
                         </ul>
-                        <ul class="sign">
-                            <li class="sign-item">
-                                <a href="login" class="sign-item-link">Sign in</a>
-                            </li>
-                            <li class="sign-item">
-                                <a href="signup" class="sign-item-link btn">Sign up</a>
-                            </li>
-                        </ul>
-                        <ul class="sign-success disable-user">
-                            <li class="sign-success-img">
-                                <img src="${pageContext.request.contextPath}/public/img/cairo.jpg" alt="">
-                            </li>
-                            <li class="sign-success-container disable-user">
-                                <ul class="user-panner">
-                                    <li class="user-panner-item">
-                                        <a href="" class="user-panner-item-link">Account Settings</a>
-                                    </li>
-                                    <li class="user-panner-item">
-                                        <a href="" class="user-panner-item-link">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <c:if test = "${sessionScope.user==null}">                        
+	                        <ul class="sign">
+	                            <li class="sign-item">
+	                                <a href="login" class="sign-item-link">Sign in</a>
+	                            </li>
+	                            <li class="sign-item">
+	                                <a href="signup" class="sign-item-link btn">Sign up</a>
+	                            </li>
+	                        </ul>
+                        </c:if>
+                        <c:if test = "${sessionScope.user!=null }">                        	
+	                        <ul class="sign-success">
+	                            <li class="sign-success-img">
+	                                <img src="${pageContext.request.contextPath}/public/img/cairo.jpg" alt="">
+	                            </li>
+	                            <li class="sign-success-container disable-user">
+	                                <ul class="user-panner">
+	                                    <li class="user-panner-item">
+	                                        <a href="" class="user-panner-item-link">Account Settings</a>
+	                                    </li>
+	                                    <li class="user-panner-item">
+	                                        <a href="logout" class="user-panner-item-link">Logout</a>
+	                                    </li>
+	                                </ul>
+	                            </li>
+	                        </ul>
+                        </c:if>
                     </div>
                 </div>
                 <section class="hero">
