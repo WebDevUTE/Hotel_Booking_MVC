@@ -8,13 +8,13 @@
                     </div>
                     <ul class="menu-footer">
                         <li class="menu-footer-item">
-                            <a href="${pageContext.request.contextPath}/public/index.html" class="menu-footer-item-link">Home</a>
+                            <a href="home" class="menu-footer-item-link">Home</a>
                         </li>
                         <li class="menu-footer-item">
-                            <a href="${pageContext.request.contextPath}/public/pages/list/listRoom.html" class="menu-footer-item-link">Listing</a>
+                            <a href="listRoom" class="menu-footer-item-link">Listing</a>
                         </li>
                         <li class="menu-footer-item">
-                            <a href="./pages/privacy/privacy.html" class="menu-footer-item-link">Privacy</a>
+                            <a href="privacy" class="menu-footer-item-link">Privacy</a>
                         </li>
                     </ul>
                 </div>

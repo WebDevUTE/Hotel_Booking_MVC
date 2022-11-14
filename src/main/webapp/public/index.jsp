@@ -95,7 +95,7 @@
                     <div class="container-fluid">
                         <div class="hero-main">
                             <h1>Latest reviews. Lowest prices.</h1>
-                            <p>compares prices from 200+ booking sites to help you find the lowest price on the right hotel for you.</p>
+                            <p>Compares prices from 200+ booking sites to help you find the lowest price on the right hotel for you.</p>
                             <form class="hero-form">
                                 <div class="hero-form-input">
                                     <div class="hero-form-item">
