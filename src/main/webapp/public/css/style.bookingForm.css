@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.wrapper{
+    max-width: 2000px;
+    margin: 0 auto;
+}
+.container{
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.container-fluid{
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.header{
+    padding: 20px 0;
+    border-bottom: 1px solid #90909090;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100vw;
+    z-index: 2;
+}
+.header-main{
+    display: flex;
+}
+.header-menu{
+    flex: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header-content{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+}
+.header-search{
+    display: flex;
+    height: 48px;
+    padding-left: 20px;
+    padding-right: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+    border: 1px solid #008489;
+}
+.search{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    width: 250px;
+    
+}
+.search-btn{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 15px;
+    cursor: pointer;
+}
+.header-menu h3{
+    font-size: 25px;
+}
+.header-navbar{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    align-items: center;
+}
+.menu{
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+.menu-item{
+    cursor: pointer;
+}
+.menu-item-link{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}
+.sign{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.sign-item-link{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}
+.sign-item-link.btn{
+    padding: 10px 20px;
+    background-color: #008489;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    color: white;
+
+}
+.sign-item-link.btn:hover{
+    background-color:#03999e;
+}
+.payRoom-main{
+    display: flex;
+    margin-top: 100px;
+    gap: 20px;
+}
+.payRoom-confirm{
+    flex: 2;
+}
+.payRoom-heading{
+    margin-bottom: 20px;
+
+}
+.payRoom-personID{
+    margin-bottom: 10px;
+}
+.payRoom-attention{
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #008489;
+}
+.payRoom-modal{
+    list-style: none;
+    position: absolute;
+    font-size: 11px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    display: none;
+}
+.payRoom-modal li{
+    margin-bottom: 10px;
+}
+.payRoom-attention:hover .payRoom-modal{
+    display: block;
+}
+.payRoom-detail-payment{
+    border-radius: 10px;
+    border: 1px solid #008489;
+    padding: 10px 20px;
+}
+.btn-submit{
+    font-size: 14px;
+}
+.btn-submit h2{
+    margin-bottom: 10px;
+}
+.btn-submit a{
+    text-decoration: none;
+    color: #008489;
+}
+.submitBtn{
+    border: none;
+    outline: none;
+    background-color: #008489;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.submitBtn:hover{
+    background-color: #03999e;
+}
+.payRoom-submit{
+    display: flex;
+    flex-direction: column;
+}
+.payRoom-submit label{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.payRoom-submit input{
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: #008489;
+}
+.payRoom-detail{
+    flex: 1;
+}
+.payRoom-personal{
+    border-radius: 10px;
+    border: 1px solid #008489;
+    padding: 10px 20px;
+}
+.payRoom-detail-img{
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #008489;
+}
+.payRoom-detail-img img{
+    width: 200px;
+    border-radius: 10px;
+}
+.payRoom-date{
+    margin-top: 10px;
+    border-bottom: 1px solid #008489;
+}
+.payRoom-checkin,
+.payRoom-checkout,
+.quantity-room,
+.price-per-night,
+.payRoom-total{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.payRoom-checkin span:last-child,
+.payRoom-checkout span:last-child,
+.quantity-room span:last-child,
+.price-per-night span:last-child,
+.payRoom-total span:last-child{
+    color: #008489;
+    font-weight: bold;
+}
+.payRoom-total{
+    margin-top: 10px;
+}
+
+.sign-success li{
+    list-style: none;
+}
+.sign-success-img{
+    width: 100%;
+}
+.sign-success-img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.sign-success-container{
+    position: relative;
+}
+.user-panner{
+    background-color: white;
+    padding: 10px 20px;
+    width: max-content;
+    position: absolute;
+    top: 0;
+    right: 0px;
+}
+.user-panner-item{
+    padding: 10px 0;
+}
+.user-panner-item:first-child{
+    border-bottom: 1px solid black;
+}
+.user-panner-item-link{
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s ease;
+}
+.user-panner-item-link:hover{
+  font-size: 20px;
+}
+.disable-user{
+    display: none;
+}
