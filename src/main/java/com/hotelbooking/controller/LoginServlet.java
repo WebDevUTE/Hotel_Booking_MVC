@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/public/index.jsp";
+		String url = "/";
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -39,15 +39,15 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(isMatchPassword);
 		if(!isMatchPassword) {
 			url = "/public/login.jsp";
-			throw new Error("Incorrect password!");
 		}
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
+			getServletContext()
+			.getRequestDispatcher("/home")
+			.forward(request, response);
 		}
-		getServletContext()
-				.getRequestDispatcher(url)
-				.forward(request, response);
+		
 	}
 
 }
