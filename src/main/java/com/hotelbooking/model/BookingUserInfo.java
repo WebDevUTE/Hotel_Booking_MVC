@@ -1,10 +1,12 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 14, 2022, 3:10:51 PM by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +20,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "booking_user_info", catalog = "hotel_booking", uniqueConstraints = @UniqueConstraint(columnNames = "Booking_ID"))
 public class BookingUserInfo implements java.io.Serializable {
 
-	private int bookingUserInfoId;
+	private Integer bookingUserInfoId;
 	private Booking booking;
 	private String name;
 	private String phone;
@@ -27,12 +29,7 @@ public class BookingUserInfo implements java.io.Serializable {
 	public BookingUserInfo() {
 	}
 
-	public BookingUserInfo(int bookingUserInfoId) {
-		this.bookingUserInfoId = bookingUserInfoId;
-	}
-
-	public BookingUserInfo(int bookingUserInfoId, Booking booking, String name, String phone, String email) {
-		this.bookingUserInfoId = bookingUserInfoId;
+	public BookingUserInfo(Booking booking, String name, String phone, String email) {
 		this.booking = booking;
 		this.name = name;
 		this.phone = phone;
@@ -40,13 +37,14 @@ public class BookingUserInfo implements java.io.Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "Booking_User_Info_ID", unique = true, nullable = false)
-	public int getBookingUserInfoId() {
+	public Integer getBookingUserInfoId() {
 		return this.bookingUserInfoId;
 	}
 
-	public void setBookingUserInfoId(int bookingUserInfoId) {
+	public void setBookingUserInfoId(Integer bookingUserInfoId) {
 		this.bookingUserInfoId = bookingUserInfoId;
 	}
 

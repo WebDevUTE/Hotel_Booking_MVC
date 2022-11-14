@@ -26,4 +26,20 @@ public class HotelDAO {
 		}
 		return hotels;
 	}
+	
+	public List<Hotel> getAllHotel() {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		String query = "FROM Hotel h";
+		TypedQuery<Hotel> q = em.createQuery(query, Hotel.class);
+		List<Hotel> hotels;
+		try {
+			hotels = q.getResultList();
+			if(hotels == null || hotels.isEmpty()) {
+				hotels = null;
+			}
+		} finally {
+			em.close();
+		}
+		return hotels;
+	}
 }

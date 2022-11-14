@@ -1,12 +1,14 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 14, 2022, 3:10:51 PM by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "destination", catalog = "hotel_booking")
 public class Destination implements java.io.Serializable {
 
-	private int destinationId;
+	private Integer destinationId;
 	private String desName;
 	private String imageUrl;
 	private Set<Hotel> hotels = new HashSet<Hotel>(0);
@@ -26,25 +28,21 @@ public class Destination implements java.io.Serializable {
 	public Destination() {
 	}
 
-	public Destination(int destinationId) {
-		this.destinationId = destinationId;
-	}
-
-	public Destination(int destinationId, String desName, String imageUrl, Set<Hotel> hotels) {
-		this.destinationId = destinationId;
+	public Destination(String desName, String imageUrl, Set<Hotel> hotels) {
 		this.desName = desName;
 		this.imageUrl = imageUrl;
 		this.hotels = hotels;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "Destination_ID", unique = true, nullable = false)
-	public int getDestinationId() {
+	public Integer getDestinationId() {
 		return this.destinationId;
 	}
 
-	public void setDestinationId(int destinationId) {
+	public void setDestinationId(Integer destinationId) {
 		this.destinationId = destinationId;
 	}
 
