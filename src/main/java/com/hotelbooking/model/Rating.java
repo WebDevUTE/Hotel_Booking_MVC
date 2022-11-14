@@ -1,10 +1,12 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 14, 2022, 3:10:51 PM by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +20,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "rating", catalog = "hotel_booking", uniqueConstraints = @UniqueConstraint(columnNames = "User_ID"))
 public class Rating implements java.io.Serializable {
 
-	private int ratingId;
+	private Integer ratingId;
 	private Hotel hotel;
 	private User user;
 	private String title;
@@ -28,12 +30,7 @@ public class Rating implements java.io.Serializable {
 	public Rating() {
 	}
 
-	public Rating(int ratingId) {
-		this.ratingId = ratingId;
-	}
-
-	public Rating(int ratingId, Hotel hotel, User user, String title, String comment, Integer rate) {
-		this.ratingId = ratingId;
+	public Rating(Hotel hotel, User user, String title, String comment, Integer rate) {
 		this.hotel = hotel;
 		this.user = user;
 		this.title = title;
@@ -42,13 +39,14 @@ public class Rating implements java.io.Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "Rating_ID", unique = true, nullable = false)
-	public int getRatingId() {
+	public Integer getRatingId() {
 		return this.ratingId;
 	}
 
-	public void setRatingId(int ratingId) {
+	public void setRatingId(Integer ratingId) {
 		this.ratingId = ratingId;
 	}
 

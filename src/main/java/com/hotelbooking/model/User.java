@@ -1,12 +1,14 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 14, 2022, 3:10:51 PM by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,35 +20,33 @@ import javax.persistence.Table;
 @Table(name = "user", catalog = "hotel_booking")
 public class User implements java.io.Serializable {
 
-	private int userId;
+	private Integer userId;
 	private String userName;
 	private String email;
 	private String password;
+	private Boolean isAdmin;
 	private Set<Rating> ratings = new HashSet<Rating>(0);
 
 	public User() {
 	}
 
-	public User(int userId) {
-		this.userId = userId;
-	}
-
-	public User(int userId, String userName, String email, String password, Set<Rating> ratings) {
-		this.userId = userId;
+	public User(String userName, String email, String password, Boolean isAdmin, Set<Rating> ratings) {
 		this.userName = userName;
 		this.email = email;
 		this.password = password;
+		this.isAdmin = isAdmin;
 		this.ratings = ratings;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "User_ID", unique = true, nullable = false)
-	public int getUserId() {
+	public Integer getUserId() {
 		return this.userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
@@ -75,6 +75,15 @@ public class User implements java.io.Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	@Column(name = "isAdmin")
+	public Boolean getIsAdmin() {
+		return this.isAdmin;
+	}
+
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")

@@ -1,12 +1,14 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 13, 2022, 7:30:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 14, 2022, 3:10:51 PM by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "category", catalog = "hotel_booking")
 public class Category implements java.io.Serializable {
 
-	private int categoryId;
+	private Integer categoryId;
 	private String categoryName;
 	private Integer size;
 	private Set<Hotel> hotels = new HashSet<Hotel>(0);
@@ -26,25 +28,21 @@ public class Category implements java.io.Serializable {
 	public Category() {
 	}
 
-	public Category(int categoryId) {
-		this.categoryId = categoryId;
-	}
-
-	public Category(int categoryId, String categoryName, Integer size, Set<Hotel> hotels) {
-		this.categoryId = categoryId;
+	public Category(String categoryName, Integer size, Set<Hotel> hotels) {
 		this.categoryName = categoryName;
 		this.size = size;
 		this.hotels = hotels;
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "Category_ID", unique = true, nullable = false)
-	public int getCategoryId() {
+	public Integer getCategoryId() {
 		return this.categoryId;
 	}
 
-	public void setCategoryId(int categoryId) {
+	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
 
