@@ -18,24 +18,24 @@
                         <img src="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" alt="logo" class="header-logo">
                         <h3>TripFinder.</h3>
                     </div>
-                    <div class="header-navbar">
+                        <div class="header-navbar">
                         <ul class="menu">
                             <li class="menu-item">
-                                <a href="../../index.html" class="menu-item-link">Hotels</a>
+                                <a href="home" class="menu-item-link">Hotels</a>
                             </li>
                             <li class="menu-item">
-                                <a href="../list/listRoom.html" class="menu-item-link">Listing</a>
+                                <a href="listRoom" class="menu-item-link">Listing</a>
                             </li>
                             <li class="menu-item">
-                                <a href="./privacy.html" class="menu-item-link">Privacy</a>
+                                <a href="privacy" class="menu-item-link">Privacy</a>
                             </li>
                         </ul>
                         <ul class="sign">
                             <li class="sign-item">
-                                <a href="../../sign_in/index.html" class="sign-item-link">Sign in</a>
+                                <a href="login" class="sign-item-link">Sign in</a>
                             </li>
                             <li class="sign-item">
-                                <a href="../../sign_in/signup.html" class="sign-item-link btn">Sign up</a>
+                                <a href="signup" class="sign-item-link btn">Sign up</a>
                             </li>
                         </ul>
                         <ul class="sign-success disable-user">

@@ -52,13 +52,13 @@
                     <div class="header-navbar">
                         <ul class="menu">
                             <li class="menu-item">
-                                <a href="${pageContext.request.contextPath}/public/index.jsp" class="menu-item-link">Hotels</a>
+                                <a href="home" class="menu-item-link">Hotels</a>
                             </li>
                             <li class="menu-item">
-                                <a href="${pageContext.request.contextPath}/public/pages/list/listRoom.html" class="menu-item-link">Listing</a>
+                                <a href="listRoom" class="menu-item-link">Listing</a>
                             </li>
                             <li class="menu-item">
-                                <a href="${pageContext.request.contextPath}/public/pages/privacy/privacy.html" class="menu-item-link">Privacy</a>
+                                <a href="privacy" class="menu-item-link">Privacy</a>
                             </li>
                         </ul>
                         <ul class="sign">
@@ -130,14 +130,14 @@
                 <div class="explore-main">
                     <div class="explore-header">
                         <h1>Explore Destinations</h1>
-                        <a href="${pageContext.request.contextPath}/public/listRoom.jsp" class="explore-link">Show all</a>
+                        <a href="listRoom" class="explore-link">Show all</a>
                     </div>
                     <div class="explore-slides">
                         <div class="explore-slider">
                             <img src="http://s3.amazonaws.com/redqteam.com/tripfinder-images/london.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="${pageContext.request.contextPath}/public/pages/listRoom.jsp"  class="explore-heading">London</a >
+                                <a href="listRoom"  class="explore-heading">London</a >
                                 <h3 class="explore-number-hotel">49863 Hotels</h3>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                             <img src="${pageContext.request.contextPath}/public/img/newyork.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="${pageContext.request.contextPath}/public/pages/listRoom.jsp"  class="explore-heading">New York</a >
+                                <a href="listRoom"  class="explore-heading">New York</a >
                                 <h3 class="explore-number-hotel">19236 Hotels</h3>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                             <img src="${pageContext.request.contextPath}/public/img/paris.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="${pageContext.request.contextPath}/public/pages/listRoom.jsp"  class="explore-heading">Paris</a >
+                                <a href="listRoom"  class="explore-heading">Paris</a >
                                 <h3 class="explore-number-hotel">23494 Hotels</h3>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                 <div class="travel-main">
                     <div class="travel-header">
                         <h1>Travelers’ Choice: Top hotels</h1>
-                        <a href="${pageContext.request.contextPath}/public/pages/listRoom.jsp" class="travel-link">Show all</a>
+                        <a href="listRoom" class="travel-link">Show all</a>
                     </div>
                     <div class="travel-place">
                         <div class="place">
@@ -187,7 +187,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -212,7 +212,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -237,7 +237,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -262,7 +262,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -287,7 +287,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -312,7 +312,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -337,7 +337,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -362,7 +362,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -379,7 +379,7 @@
                 <div class="rate-main">
                     <div class="rate-header">
                         <h1>Travelers’ Choice: Top hotels</h1>
-                        <a href="${pageContext.request.contextPath}/public/pages/list/listRoom.html" class="rate-link">Show all</a>
+                        <a href="listRoom" class="rate-link">Show all</a>
                     </div>
                     <div class="rate-place">
                         <div class="place">
@@ -399,7 +399,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -424,7 +424,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -449,7 +449,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -474,7 +474,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -499,7 +499,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -524,7 +524,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -549,7 +549,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -574,7 +574,7 @@
                                     <div class="comment">Bad (12)</div>
                                 </div>
                                 <div class="place-view">
-                                    <a href="${pageContext.request.contextPath}/public/pages/roomDetails/roomDetails.html">
+                                    <a href="roomDetails">
                                         <i class="fas fa-external-link-alt view-icon"></i>
                                         View Details
                                     </a>
@@ -600,6 +600,6 @@
                 autoplaySpeed: 2000,
             });
     </script>
-    <script src="./js/home.js"></script>
+    <script src="${pageContext.request.contextPath}/public/js/home.js"></script>
 </body>
 </html>

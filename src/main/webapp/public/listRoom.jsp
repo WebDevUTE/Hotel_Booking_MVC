@@ -20,31 +20,26 @@
                             <img src="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" alt="logo" class="header-logo">
                             <h3>TripFinder.</h3>
                         </div>
-                        <form class="header-search">
-                            <input type="text" class="search" placeholder="Search....">
-                            <button type="submit" class="search-btn">
-                                <i class="fas fa-search search-btn-icon"></i>
-                            </button>
-                        </form>
+                        <%@include file ='./common/searchRoom.jsp'%>
                     </div>
-                    <div class="header-navbar">
+                        <div class="header-navbar">
                         <ul class="menu">
                             <li class="menu-item">
-                                <a href="../../index.html" class="menu-item-link">Hotels</a>
+                                <a href="home" class="menu-item-link">Hotels</a>
                             </li>
                             <li class="menu-item">
-                                <a href="./listRoom.html" class="menu-item-link">Listing</a>
+                                <a href="listRoom" class="menu-item-link">Listing</a>
                             </li>
                             <li class="menu-item">
-                                <a href="../privacy/privacy.html" class="menu-item-link">Privacy</a>
+                                <a href="privacy" class="menu-item-link">Privacy</a>
                             </li>
                         </ul>
                         <ul class="sign">
                             <li class="sign-item">
-                                <a href="../../sign_in/index.html" class="sign-item-link">Sign in</a>
+                                <a href="login" class="sign-item-link">Sign in</a>
                             </li>
                             <li class="sign-item">
-                                <a href="../../sign_in/signup.html" class="sign-item-link btn">Sign up</a>
+                                <a href="signup" class="sign-item-link btn">Sign up</a>
                             </li>
                         </ul>
                         <ul class="sign-success disable-user">
@@ -220,7 +215,7 @@
                                 <div class="comment">Bad (12)</div>
                             </div>
                             <div class="place-view">
-                                <a href="../roomDetails/roomDetails.html">
+                                <a href="roomDetails">
                                     <i class="fas fa-external-link-alt view-icon"></i>
                                     View Details
                                 </a>
@@ -245,7 +240,7 @@
                                 <div class="comment">Bad (12)</div>
                             </div>
                             <div class="place-view">
-                                <a href="../roomDetails/roomDetails.html">
+                                <a href="roomDetails">
                                     <i class="fas fa-external-link-alt view-icon"></i>
                                     View Details
                                 </a>
@@ -270,7 +265,7 @@
                                 <div class="comment">Bad (12)</div>
                             </div>
                             <div class="place-view">
-                                <a href="../roomDetails/roomDetails.html">
+                                <a href="roomDetails">
                                     <i class="fas fa-external-link-alt view-icon"></i>
                                     View Details
                                 </a>
@@ -295,7 +290,7 @@
                                 <div class="comment">Bad (12)</div>
                             </div>
                             <div class="place-view">
-                                <a href="../roomDetails/roomDetails.html">
+                                <a href="roomDetails">
                                     <i class="fas fa-external-link-alt view-icon"></i>
                                     View Details
                                 </a>
@@ -320,7 +315,7 @@
                                 <div class="comment">Bad (12)</div>
                             </div>
                             <div class="place-view">
-                                <a href="../roomDetails/roomDetails.html">
+                                <a href="roomDetails">
                                     <i class="fas fa-external-link-alt view-icon"></i>
                                     View Details
                                 </a>
@@ -345,7 +340,7 @@
                                 <div class="comment">Bad (12)</div>
                             </div>
                             <div class="place-view">
-                                <a href="../roomDetails/roomDetails.html">
+                                <a href="roomDetails">
                                     <i class="fas fa-external-link-alt view-icon"></i>
                                     View Details
                                 </a>
@@ -370,7 +365,7 @@
                                 <div class="comment">Bad (12)</div>
                             </div>
                             <div class="place-view">
-                                <a href="../roomDetails/roomDetails.html">
+                                <a href="roomDetails">
                                     <i class="fas fa-external-link-alt view-icon"></i>
                                     View Details
                                 </a>
@@ -395,7 +390,7 @@
                                 <div class="comment">Bad (12)</div>
                             </div>
                             <div class="place-view">
-                                <a href="../roomDetails/roomDetails.html">
+                                <a href="roomDetails">
                                     <i class="fas fa-external-link-alt view-icon"></i>
                                     View Details
                                 </a>
