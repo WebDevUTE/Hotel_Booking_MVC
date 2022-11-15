@@ -34,9 +34,21 @@ public class ListRoomServlet extends HttpServlet {
 	public static void loadListingRoom(HttpServletRequest request) {
 		HotelDAO hotelDAO = new HotelDAO();
 		
-		List<Hotel> listingHotels;
-		listingHotels = hotelDAO.getAllHotel();
+		List<Hotel> listingHotels = null;
+		String destination = request.getParameter("destination");
+		if(destination == null) {
+			listingHotels = hotelDAO.getAllHotel();
+		}
 		
+		else if(destination.equals("London")) {
+			listingHotels = hotelDAO.getHotelsByDestination(1);
+		} 
+		else if(destination.equals("Newyork")) {
+			listingHotels = hotelDAO.getHotelsByDestination(2);
+		} 
+		else if(destination.equals("Paris")) {
+			listingHotels = hotelDAO.getHotelsByDestination(3);
+		} 
 		request.setAttribute("listingHotels", listingHotels);
 	}
 

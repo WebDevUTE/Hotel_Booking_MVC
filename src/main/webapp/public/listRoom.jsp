@@ -162,7 +162,7 @@
 	                	<div class="place">
 	                        <img src='${listingHotels.imageUrl}' alt="" class="place-img"/>
 	                        <div class="place-content">
-	                            <span class="address">Địa chỉ</span>
+	                            <span class="address">${listingHotels.address }</span>
 	                            <a href="">${listingHotels.hotelName}</a>
 	                            <span class="price">$${listingHotels.price }.00/Night</span>
 	                            <div class="assess">
