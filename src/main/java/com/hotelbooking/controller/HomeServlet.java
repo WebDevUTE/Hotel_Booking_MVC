@@ -33,21 +33,22 @@ public class HomeServlet extends HttpServlet {
 	
 	public static void loadHomePage(HttpServletRequest request) {
 		HotelDAO hotelDAO = new HotelDAO();
-		
-		List<Hotel> londonHotels;
-		londonHotels = hotelDAO.getHotelsByDestination(1);
+				
+		List<Hotel> hotels;
+		hotels = hotelDAO.getHotelsByCategory(2);
 		// Set request
-		request.setAttribute("londonHotels", londonHotels);
+		request.setAttribute("hotels", hotels);
 		
-		List<Hotel> newyorkHotels;
-		newyorkHotels = hotelDAO.getHotelsByDestination(2);
+		List<Hotel> villa;
+		villa = hotelDAO.getHotelsByCategory(1);
 		// Set request
-		request.setAttribute("newyorkHotels", newyorkHotels);
+		request.setAttribute("villa", villa);
 		
-		List<Hotel> parisHotels;
-		parisHotels = hotelDAO.getHotelsByDestination(3);
+		List<Hotel> resort;
+		resort = hotelDAO.getHotelsByCategory(1);
 		// Set request
-		request.setAttribute("parisHotels", parisHotels);
+		request.setAttribute("resort", resort);
+		
 	}
 
 }
