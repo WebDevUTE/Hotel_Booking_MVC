@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="roomDetails.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/roomDetails.css">
     <script src="https://kit.fontawesome.com/476aa9aedb.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="../../Imgs/logo-alt.980da429.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" type="image/x-icon">
     <title>Room Details</title>
 </head>
 <body>
@@ -15,54 +15,7 @@
         <header class="header">
             <div class="container-fluid">
                 <div class="header-main">
-                    <div class="header-menu">
-                        <div class="header-content">
-                            <img src="../../Imgs/logo-alt.980da429.svg" alt="logo" class="header-logo">
-                            <h3>TripFinder.</h3>
-                        </div>
-                        <form class="header-search">
-                            <input type="text" class="search" placeholder="Search....">
-                            <button type="submit" class="search-btn">
-                                <i class="fas fa-search search-btn-icon"></i>
-                            </button>
-                        </form>
-                    </div>
-                        <div class="header-navbar">
-                        <ul class="menu">
-                            <li class="menu-item">
-                                <a href="home" class="menu-item-link">Hotels</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="listRoom" class="menu-item-link">Listing</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="privacy" class="menu-item-link">Privacy</a>
-                            </li>
-                        </ul>
-                        <ul class="sign">
-                            <li class="sign-item">
-                                <a href="login" class="sign-item-link">Sign in</a>
-                            </li>
-                            <li class="sign-item">
-                                <a href="signup" class="sign-item-link btn">Sign up</a>
-                            </li>
-                        </ul>
-                        <ul class="sign-success disable-user">
-                            <li class="sign-success-img">
-                                <img src="${pageContext.request.contextPath}/public/img/cairo.jpg" alt="">
-                            </li>
-                            <li class="sign-success-container disable-user">
-                                <ul class="user-panner">
-                                    <li class="user-panner-item">
-                                        <a href="" class="user-panner-item-link">Account Settings</a>
-                                    </li>
-                                    <li class="user-panner-item">
-                                        <a href="" class="user-panner-item-link">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    <%@include file = './common/navbarWithSearch.jsp' %>
                 </div>
             </div>
         </header>
@@ -226,28 +179,8 @@
                 </div>
             </div>
         </section>
-        <section class="footer">
-            <div class="container-fluid">
-                <div class="footer-main">
-                    <div class="logo">
-                        <img src="./Imgs/logo-alt.980da429.svg" alt="">
-                        <h1>TripFinder.</h1>
-                    </div>
-                    <ul class="menu-footer">
-                        <li class="menu-footer-item">
-                            <a href="../../index.html" class="menu-footer-item-link">Home</a>
-                        </li>
-                        <li class="menu-footer-item">
-                            <a href="./pages/list/listRoom.html" class="menu-footer-item-link">Listing</a>
-                        </li>
-                        <li class="menu-footer-item">
-                            <a href="./pages/privacy/privacy.html" class="menu-footer-item-link">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <%@include file='./common/footer.jsp' %>
     </div>
-    <script src="./app.js"></script>
+    <script src="${pageContext.request.contextPath}/public/js/roomDetails.js"></script>
 </body>
 </html>

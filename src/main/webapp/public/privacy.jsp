@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/style.privacy.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/privacy.css">
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" type="image/x-icon">
     <title>Privacy</title>
 </head>
@@ -14,46 +14,7 @@
         <header class="header">
             <div class="container-fluid">
                 <div class="header-main">
-                    <div class="header-menu">
-                        <img src="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" alt="logo" class="header-logo">
-                        <h3>TripFinder.</h3>
-                    </div>
-                        <div class="header-navbar">
-                        <ul class="menu">
-                            <li class="menu-item">
-                                <a href="home" class="menu-item-link">Hotels</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="listRoom" class="menu-item-link">Listing</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="privacy" class="menu-item-link">Privacy</a>
-                            </li>
-                        </ul>
-                        <ul class="sign">
-                            <li class="sign-item">
-                                <a href="login" class="sign-item-link">Sign in</a>
-                            </li>
-                            <li class="sign-item">
-                                <a href="signup" class="sign-item-link btn">Sign up</a>
-                            </li>
-                        </ul>
-                        <ul class="sign-success disable-user">
-                            <li class="sign-success-img">
-                                <img src="${pageContext.request.contextPath}/public/img/cairo.jpg" alt="">
-                            </li>
-                            <li class="sign-success-container disable-user">
-                                <ul class="user-panner">
-                                    <li class="user-panner-item">
-                                        <a href="" class="user-panner-item-link">Account Settings</a>
-                                    </li>
-                                    <li class="user-panner-item">
-                                        <a href="" class="user-panner-item-link">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                   <%@include file='./common/navbarWithoutSearch.jsp' %>
                 </div>
             </div>
         </header>

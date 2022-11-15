@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/style.signup.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/base.signup.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/signup.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/signupBase.css">
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <title>Login</title>

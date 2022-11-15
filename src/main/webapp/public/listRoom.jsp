@@ -1,11 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/style.listRoom.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/listRoom.css">
     <script src="https://kit.fontawesome.com/476aa9aedb.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" type="image/x-icon">
     <title>Listing Room</title>
@@ -15,49 +17,7 @@
         <header class="header">
             <div class="container-fluid">
                 <div class="header-main">
-                    <div class="header-menu">
-                        <div class="header-content">
-                            <img src="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" alt="logo" class="header-logo">
-                            <h3>TripFinder.</h3>
-                        </div>
-                        <%@include file ='./common/searchRoom.jsp'%>
-                    </div>
-                        <div class="header-navbar">
-                        <ul class="menu">
-                            <li class="menu-item">
-                                <a href="home" class="menu-item-link">Hotels</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="listRoom" class="menu-item-link">Listing</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="privacy" class="menu-item-link">Privacy</a>
-                            </li>
-                        </ul>
-                        <ul class="sign">
-                            <li class="sign-item">
-                                <a href="login" class="sign-item-link">Sign in</a>
-                            </li>
-                            <li class="sign-item">
-                                <a href="signup" class="sign-item-link btn">Sign up</a>
-                            </li>
-                        </ul>
-                        <ul class="sign-success disable-user">
-                            <li class="sign-success-img">
-                                <img src="${pageContext.request.contextPath}/public/img/cairo.jpg" alt="">
-                            </li>
-                            <li class="sign-success-container disable-user">
-                                <ul class="user-panner">
-                                    <li class="user-panner-item">
-                                        <a href="" class="user-panner-item-link">Account Settings</a>
-                                    </li>
-                                    <li class="user-panner-item">
-                                        <a href="" class="user-panner-item-link">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    <%@include file = './common/navbarWithSearch.jsp' %>
                 </div>
             </div>
         </header>
@@ -198,206 +158,34 @@
         <section class="all-room">
             <div class="container-fluid">
                 <div class="room-main">
-                    <div class="place">
-                        <img src="${pageContext.request.contextPath}/public/img/hotel-11_thumb.jpg" alt="" class="place-img">
-                        <div class="place-content">
-                            <span class="address">Địa chỉ</span>
-                            <a href="">Tên hotel</a>
-                            <span class="price">$316.00/Night - Giá phòng 1 đêm (lấy giá thấp nhất)</span>
-                            <div class="assess">
-                                <div class="star">
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                </div>
-                                <div class="comment">Bad (12)</div>
-                            </div>
-                            <div class="place-view">
-                                <a href="roomDetails">
-                                    <i class="fas fa-external-link-alt view-icon"></i>
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <i class="fas fa-heart like-icon"></i> 
-                    </div>
-                    <div class="place">
-                        <img src="${pageContext.request.contextPath}/public/img/hotel-11_thumb.jpg" alt="" class="place-img">
-                        <div class="place-content">
-                            <span class="address">Địa chỉ</span>
-                            <a href="">Tên hotel</a>
-                            <span class="price">$316.00/Night - Giá phòng 1 đêm (lấy giá thấp nhất)</span>
-                            <div class="assess">
-                                <div class="star">
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                </div>
-                                <div class="comment">Bad (12)</div>
-                            </div>
-                            <div class="place-view">
-                                <a href="roomDetails">
-                                    <i class="fas fa-external-link-alt view-icon"></i>
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <i class="fas fa-heart like-icon"></i> 
-                    </div>
-                    <div class="place">
-                        <img src="${pageContext.request.contextPath}/public/img/hotel-11_thumb.jpg" alt="" class="place-img">
-                        <div class="place-content">
-                            <span class="address">Địa chỉ</span>
-                            <a href="">Tên hotel</a>
-                            <span class="price">$316.00/Night - Giá phòng 1 đêm (lấy giá thấp nhất)</span>
-                            <div class="assess">
-                                <div class="star">
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                </div>
-                                <div class="comment">Bad (12)</div>
-                            </div>
-                            <div class="place-view">
-                                <a href="roomDetails">
-                                    <i class="fas fa-external-link-alt view-icon"></i>
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <i class="fas fa-heart like-icon"></i> 
-                    </div>
-                    <div class="place">
-                        <img src="${pageContext.request.contextPath}/public/img/hotel-11_thumb.jpg" alt="" class="place-img">
-                        <div class="place-content">
-                            <span class="address">Địa chỉ</span>
-                            <a href="">Tên hotel</a>
-                            <span class="price">$316.00/Night - Giá phòng 1 đêm (lấy giá thấp nhất)</span>
-                            <div class="assess">
-                                <div class="star">
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                </div>
-                                <div class="comment">Bad (12)</div>
-                            </div>
-                            <div class="place-view">
-                                <a href="roomDetails">
-                                    <i class="fas fa-external-link-alt view-icon"></i>
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <i class="fas fa-heart like-icon"></i> 
-                    </div>
-                    <div class="place">
-                        <img src="${pageContext.request.contextPath}/public/img/hotel-11_thumb.jpg" alt="" class="place-img">
-                        <div class="place-content">
-                            <span class="address">Địa chỉ</span>
-                            <a href="">Tên hotel</a>
-                            <span class="price">$316.00/Night - Giá phòng 1 đêm (lấy giá thấp nhất)</span>
-                            <div class="assess">
-                                <div class="star">
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                </div>
-                                <div class="comment">Bad (12)</div>
-                            </div>
-                            <div class="place-view">
-                                <a href="roomDetails">
-                                    <i class="fas fa-external-link-alt view-icon"></i>
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <i class="fas fa-heart like-icon"></i> 
-                    </div>
-                    <div class="place">
-                        <img src="${pageContext.request.contextPath}/public/img/hotel-11_thumb.jpg" alt="" class="place-img">
-                        <div class="place-content">
-                            <span class="address">Địa chỉ</span>
-                            <a href="">Tên hotel</a>
-                            <span class="price">$316.00/Night - Giá phòng 1 đêm (lấy giá thấp nhất)</span>
-                            <div class="assess">
-                                <div class="star">
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                </div>
-                                <div class="comment">Bad (12)</div>
-                            </div>
-                            <div class="place-view">
-                                <a href="roomDetails">
-                                    <i class="fas fa-external-link-alt view-icon"></i>
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <i class="fas fa-heart like-icon"></i> 
-                    </div>
-                    <div class="place">
-                        <img src="${pageContext.request.contextPath}/public/img/hotel-11_thumb.jpg" alt="" class="place-img">
-                        <div class="place-content">
-                            <span class="address">Địa chỉ</span>
-                            <a href="">Tên hotel</a>
-                            <span class="price">$316.00/Night - Giá phòng 1 đêm (lấy giá thấp nhất)</span>
-                            <div class="assess">
-                                <div class="star">
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                </div>
-                                <div class="comment">Bad (12)</div>
-                            </div>
-                            <div class="place-view">
-                                <a href="roomDetails">
-                                    <i class="fas fa-external-link-alt view-icon"></i>
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <i class="fas fa-heart like-icon"></i> 
-                    </div>
-                    <div class="place">
-                        <img src="${pageContext.request.contextPath}/public/img/hotel-11_thumb.jpg" alt="" class="place-img">
-                        <div class="place-content">
-                            <span class="address">Địa chỉ</span>
-                            <a href="">Tên hotel</a>
-                            <span class="price">$316.00/Night - Giá phòng 1 đêm (lấy giá thấp nhất)</span>
-                            <div class="assess">
-                                <div class="star">
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                    <i class="far fa-star icon-star"></i>
-                                </div>
-                                <div class="comment">Bad (12)</div>
-                            </div>
-                            <div class="place-view">
-                                <a href="roomDetails">
-                                    <i class="fas fa-external-link-alt view-icon"></i>
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                        <i class="fas fa-heart like-icon"></i> 
-                    </div>
+                	<c:forEach items='${ listingHotels}' var="listingHotels">
+	                	<div class="place">
+	                        <img src='${listingHotels.imageUrl}' alt="" class="place-img"/>
+	                        <div class="place-content">
+	                            <span class="address">Địa chỉ</span>
+	                            <a href="">${listingHotels.hotelName}</a>
+	                            <span class="price">$${listingHotels.price }.00/Night</span>
+	                            <div class="assess">
+	                                <div class="star">
+	                                    <i class="far fa-star icon-star"></i>
+	                                    <i class="far fa-star icon-star"></i>
+	                                    <i class="far fa-star icon-star"></i>
+	                                    <i class="far fa-star icon-star"></i>
+	                                    <i class="far fa-star icon-star"></i>
+	                                </div>
+	                                <div class="comment">Bad (12)</div>
+	                            </div>
+	                            <div class="place-view">
+	                                <a href="roomDetails">
+	                                    <i class="fas fa-external-link-alt view-icon"></i>
+	                                    View Details
+	                                </a>
+	                            </div>
+	                        </div>
+	                        <i class="fas fa-heart like-icon"></i> 
+	                    </div>
+                	</c:forEach>
+                	
                 </div>
                 <div class="load">
                     <button class="btn-load">Load more</button>
