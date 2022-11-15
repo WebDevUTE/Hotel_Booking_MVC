@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/476aa9aedb.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" type="image/x-icon">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/style.home.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/home.css">
     <title>TripFinder Home</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/vendor/slick-1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/public/vendor/slick-1.8.1/slick/slick-theme.css"/>
@@ -46,50 +46,7 @@
         <header class="header">
             <div class="container-fluid">
                 <div class="header-main wrapper">
-                    <div class="header-menu">
-                        <img src="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" alt="logo" class="header-logo">
-                        <h3>TripFinder.</h3>
-                    </div>
-                    <div class="header-navbar">
-                        <ul class="menu">
-                            <li class="menu-item">
-                                <a href="home" class="menu-item-link">Hotels</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="listRoom" class="menu-item-link">Listing</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="privacy" class="menu-item-link">Privacy</a>
-                            </li>
-                        </ul>
-                        <c:if test = "${sessionScope.user==null}">                        
-	                        <ul class="sign">
-	                            <li class="sign-item">
-	                                <a href="login" class="sign-item-link">Sign in</a>
-	                            </li>
-	                            <li class="sign-item">
-	                                <a href="signup" class="sign-item-link btn">Sign up</a>
-	                            </li>
-	                        </ul>
-                        </c:if>
-                        <c:if test = "${sessionScope.user!=null }">                        	
-	                        <ul class="sign-success">
-	                            <li class="sign-success-img">
-	                                <img src="${pageContext.request.contextPath}/public/img/cairo.jpg" alt="">
-	                            </li>
-	                            <li class="sign-success-container disable-user">
-	                                <ul class="user-panner">
-	                                    <li class="user-panner-item">
-	                                        <a href="" class="user-panner-item-link">Account Settings</a>
-	                                    </li>
-	                                    <li class="user-panner-item">
-	                                        <a href="logout" class="user-panner-item-link">Logout</a>
-	                                    </li>
-	                                </ul>
-	                            </li>
-	                        </ul>
-                        </c:if>
-                    </div>
+                    <%@include file = './common/navbarWithoutSearch.jsp' %>
                 </div>
                 <section class="hero">
                     <div class="container-fluid">
@@ -142,7 +99,7 @@
                             <img src="http://s3.amazonaws.com/redqteam.com/tripfinder-images/london.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="listRoom"  class="explore-heading">London</a >
+                                <a href="listRoom?filter=1" class="explore-heading">London</a >
                                 <h3 class="explore-number-hotel">49863 Hotels</h3>
                             </div>
                         </div>
@@ -150,7 +107,7 @@
                             <img src="${pageContext.request.contextPath}/public/img/newyork.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="listRoom"  class="explore-heading">New York</a >
+                                <a href="listRoom?filter=2"  class="explore-heading">New York</a >
                                 <h3 class="explore-number-hotel">19236 Hotels</h3>
                             </div>
                         </div>
@@ -158,7 +115,7 @@
                             <img src="${pageContext.request.contextPath}/public/img/paris.jpg" alt="">
                             <div class="blank"></div>
                             <div class="explore-content">
-                                <a href="listRoom"  class="explore-heading">Paris</a >
+                                <a href="listRoom?filter=3"  class="explore-heading">Paris</a >
                                 <h3 class="explore-number-hotel">23494 Hotels</h3>
                             </div>
                         </div>
