@@ -75,34 +75,6 @@
                         <!-- Here Here Here Here Here Here Here Here-->
                         
                         <div class="chooseRoom">
-                            <h1 class="chooseRoom-heading">
-                                Choose Rooom
-                            </h1>
-                            <form action="checkRoom?hotelId=${hotelDetail.hotelId}" method="POST" class="checkRoom">
-                                <div class="user-booking-datecheck">
-                                    <h3 class="user-booking-datecheck-heading">Date Check</h3>
-                                    <div class="datcheck">
-                                        <div class="datecheck-in">
-                                            <label for="checkout">Check in</label>
-                                            <input  name="checkout" type="date" class="user-booking-datecheck-input_in">
-                                        </div>
-                                        <div class="datecheck-out">
-                                            <label for="checkin">Check out</label>
-                                            <input name="checkin"  type="date" class="user-booking-datecheck-input_out">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="user-booking-guest">
-                                    <h3 class="user-booking-guest-heading">Guest</h3>
-                                    <input name="guest" type="number" class="user-booking-guest-input" min=0 >
-                                </div>
-                                <div class="user-booking-room">
-                                    <h3 class="user-booking-room-heading">Room</h3>
-                                    <input name="room" type="number" class="user-booking-room-input" min=0 max=${hotelDetail.rooms }>
-                                </div>
-                                <button type="submit" class="checkRoom-btn">Check Available</button>
-
-                            </form>
                             <div class="resultCheckRoom">
                                 <div class="room">
                                     <h1 class="room-heading">Phòng Luxury</h1>
@@ -142,47 +114,29 @@
                         </div>
                     </div>
                     <div class="price-and-date">
-                        <!-- <form action="" class="submit-price">
+                        <form action="" class="submit-price">
                             <div class="price">
-                                <h1>$162<span>/ night</span></h1>
-                                <a href="#">Contact to Hotel</a>
+                                <h1 style="margin-bottom: 10px;color:#008489;">$162<span style="color:black;"> /night</span></h1>
                             </div>
                             <div class="user-booking">
-                                <div class="user-booking-name">
-                                    <h3 class="user-booking-name-heading">Name</h3>
-                                    <input type="text" class="user-booking-name-input">
-                                </div>
-                                <div class="user-booking-email">
-                                    <h3 class="user-booking-email-heading">Email</h3>
-                                    <input type="email" class="user-booking-email-input">
-                                </div>
-                                <div class="user-booking-phone">
-                                    <h3 class="user-booking-phone-heading">Phone number</h3>
-                                    <input type="text" class="user-booking-phone-input">
-                                </div>
                                 <div class="user-booking-datecheck">
-                                    <h3 class="user-booking-datecheck-heading">Date Check</h3>
+                                    <h3 class="user-booking-datecheck-heading" style="margin-bottom: 10px;color:#008489;">Date Check</h3>
                                     <div class="datcheck">
-                                        <div class="datecheck-in">
-                                            <label for="">Check in</label>
-                                            <input type="date" class="user-booking-datecheck-input_in">
-                                        </div>
-                                        <div class="datecheck-out">
-                                            <label for="">Check out</label>
-                                            <input type="date" class="user-booking-datecheck-input_out">
-                                        </div>
+                                        <input type="text" class="user-booking-datecheck-input_in" placeholder="Checkin" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'">
+                                        <input type="text" class="user-booking-datecheck-input_out" placeholder="Checkout" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'">
                                     </div>
                                 </div>
                                 <div class="user-booking-guest">
-                                    <h3 class="user-booking-guest-heading">Guest</h3>
+                                    <h3 class="user-booking-guest-heading" style="color:#008489;">Guest</h3>
                                     <input type="number" class="user-booking-guest-input">
                                 </div>
                                 <div class="user-booking-room">
-                                    <h3 class="user-booking-room-heading">Room</h3>
+                                    <h3 class="user-booking-room-heading" style="color:#008489;">Room</h3>
                                     <input type="number" class="user-booking-room-input">
                                 </div>
                             </div>
-                        </form> -->
+                            <button type="submit" class="checkRoom-btn">Book Hotel</button>
+                        </form>
                     </div>
                 </div>
             </div>
