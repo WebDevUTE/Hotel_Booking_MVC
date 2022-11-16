@@ -208,13 +208,38 @@
     padding: 10px;
     border-radius: 10px;
     height: 50px;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(247,247,247);
 }
-.datecheck-in,
-.datecheck-out{
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+.submit-price{
+	background-color: white;
+	padding:20px 40px;
+	height: fit-content;
+	border-radius:10px;
+	-webkit-box-shadow: -1px 2px 39px -11px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 2px 39px -11px rgba(0,0,0,0.75);
+box-shadow: -1px 2px 39px -11px rgba(0,0,0,0.75);
+}
+.datcheck{
+	display: flex;
+	margin-bottom: 10px;
+}
+.user-booking-datecheck-input_in,
+.user-booking-datecheck-input_out{
+	width: 120px;
+	border:none;
+	background-color: rgb(247,247,247);
+	height: 40px;
+	outline:none;
+}
+.user-booking-datecheck-input_in{
+	border-radius:10px 0 0 10px;
+}
+.user-booking-datecheck-input_out{
+	border-radius:0px 10px 10px 0;
+}
+.user-booking-datecheck-input_in::placeholder,
+.user-booking-datecheck-input_out::placeholder{
+	text-align: center;
 }
 .footer{
     margin-top: 100px;
