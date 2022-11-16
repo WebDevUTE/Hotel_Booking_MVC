@@ -100,7 +100,7 @@
                             <div class="blank"></div>
                             <div class="explore-content">
                                 <a href="listRoom?destination=London" class="explore-heading">London</a >
-                                <h3 class="explore-number-hotel">10</h3>
+                                <h3 class="explore-number-hotel"></h3>
                             </div>
                         </div>
                         <div class="explore-slider">
@@ -108,7 +108,7 @@
                             <div class="blank"></div>
                             <div class="explore-content">
                                 <a href="listRoom?destination=Newyork"  class="explore-heading">New York</a >
-                                <h3 class="explore-number-hotel">8</h3>
+                                <h3 class="explore-number-hotel"></h3>
                             </div>
                         </div>
                         <div class="explore-slider">
@@ -116,7 +116,7 @@
                             <div class="blank"></div>
                             <div class="explore-content">
                                 <a href="listRoom?destination=Paris"  class="explore-heading">Paris</a >
-                                <h3 class="explore-number-hotel">8</h3>
+                                <h3 class="explore-number-hotel"></h3>
                             </div>
                         </div>
                         

@@ -1,6 +1,6 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 14, 2022, 3:10:51 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 16, 2022, 11:06:54 PM by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -25,17 +25,22 @@ public class User implements java.io.Serializable {
 	private String email;
 	private String password;
 	private Boolean isAdmin;
+	private Set<Booking> bookings = new HashSet<Booking>(0);
 	private Set<Rating> ratings = new HashSet<Rating>(0);
+	private Set<Rating> ratings_1 = new HashSet<Rating>(0);
 
 	public User() {
 	}
 
-	public User(String userName, String email, String password, Boolean isAdmin, Set<Rating> ratings) {
+	public User(String userName, String email, String password, Boolean isAdmin, Set<Booking> bookings,
+			Set<Rating> ratings, Set<Rating> ratings_1) {
 		this.userName = userName;
 		this.email = email;
 		this.password = password;
 		this.isAdmin = isAdmin;
+		this.bookings = bookings;
 		this.ratings = ratings;
+		this.ratings_1 = ratings_1;
 	}
 
 	@Id
@@ -87,12 +92,30 @@ public class User implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	public Set<Booking> getBookings() {
+		return this.bookings;
+	}
+
+	public void setBookings(Set<Booking> bookings) {
+		this.bookings = bookings;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	public Set<Rating> getRatings() {
 		return this.ratings;
 	}
 
 	public void setRatings(Set<Rating> ratings) {
 		this.ratings = ratings;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	public Set<Rating> getRatings_1() {
+		return this.ratings_1;
+	}
+
+	public void setRatings_1(Set<Rating> ratings_1) {
+		this.ratings_1 = ratings_1;
 	}
 
 }

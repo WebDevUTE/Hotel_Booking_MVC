@@ -1,6 +1,6 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 14, 2022, 3:10:51 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 16, 2022, 11:06:54 PM by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -33,12 +33,14 @@ public class Hotel implements java.io.Serializable {
 	private Integer rooms;
 	private Set<Booking> bookings = new HashSet<Booking>(0);
 	private Set<Rating> ratings = new HashSet<Rating>(0);
+	private Set<Rating> ratings_1 = new HashSet<Rating>(0);
 
 	public Hotel() {
 	}
 
 	public Hotel(Category category, Destination destination, String hotelName, String imageUrl, String description,
-			String address, Long price, Integer rooms, Set<Booking> bookings, Set<Rating> ratings) {
+			String address, Long price, Integer rooms, Set<Booking> bookings, Set<Rating> ratings,
+			Set<Rating> ratings_1) {
 		this.category = category;
 		this.destination = destination;
 		this.hotelName = hotelName;
@@ -49,6 +51,7 @@ public class Hotel implements java.io.Serializable {
 		this.rooms = rooms;
 		this.bookings = bookings;
 		this.ratings = ratings;
+		this.ratings_1 = ratings_1;
 	}
 
 	@Id
@@ -153,6 +156,15 @@ public class Hotel implements java.io.Serializable {
 
 	public void setRatings(Set<Rating> ratings) {
 		this.ratings = ratings;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hotel")
+	public Set<Rating> getRatings_1() {
+		return this.ratings_1;
+	}
+
+	public void setRatings_1(Set<Rating> ratings_1) {
+		this.ratings_1 = ratings_1;
 	}
 
 }
