@@ -71,31 +71,34 @@
                         <div class="map">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.023524699233!2d106.69757555045462!3d10.732668892313727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528b2747a81a3%3A0x33c1813055acb613!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBUw7RuIMSQ4bupYyBUaOG6r25n!5e0!3m2!1svi!2s!4v1663665609080!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
+                        
+                        <!-- Here Here Here Here Here Here Here Here-->
+                        
                         <div class="chooseRoom">
                             <h1 class="chooseRoom-heading">
                                 Choose Rooom
                             </h1>
-                            <form action="checkRoom" class="checkRoom">
+                            <form action="checkRoom?hotelId=${hotelDetail.hotelId}" method="POST" class="checkRoom">
                                 <div class="user-booking-datecheck">
                                     <h3 class="user-booking-datecheck-heading">Date Check</h3>
                                     <div class="datcheck">
                                         <div class="datecheck-in">
-                                            <label for="">Check in</label>
-                                            <input  type="date" class="user-booking-datecheck-input_in">
+                                            <label for="checkout">Check in</label>
+                                            <input  name="checkout" type="date" class="user-booking-datecheck-input_in">
                                         </div>
                                         <div class="datecheck-out">
-                                            <label for="">Check out</label>
-                                            <input type="date" class="user-booking-datecheck-input_out">
+                                            <label for="checkin">Check out</label>
+                                            <input name="checkin"  type="date" class="user-booking-datecheck-input_out">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="user-booking-guest">
                                     <h3 class="user-booking-guest-heading">Guest</h3>
-                                    <input type="number" class="user-booking-guest-input" min=0 >
+                                    <input name="guest" type="number" class="user-booking-guest-input" min=0 >
                                 </div>
                                 <div class="user-booking-room">
                                     <h3 class="user-booking-room-heading">Room</h3>
-                                    <input type="number" class="user-booking-room-input" min=0 max=${hotelDetail.rooms }>
+                                    <input name="room" type="number" class="user-booking-room-input" min=0 max=${hotelDetail.rooms }>
                                 </div>
                                 <button type="submit" class="checkRoom-btn">Check Available</button>
 
