@@ -1,6 +1,6 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 14, 2022, 3:10:51 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 16, 2022, 11:06:54 PM by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
