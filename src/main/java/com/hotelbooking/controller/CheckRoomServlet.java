@@ -7,10 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class CheckRoomServlet
- */
-@WebServlet(name = "CheckRoomServlet", value = "checkRoom")
+@WebServlet(name = "CheckRoomServlet", value = "/checkRoom")
 public class CheckRoomServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,8 +16,7 @@ public class CheckRoomServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String url = "";
 	}
 
 }
