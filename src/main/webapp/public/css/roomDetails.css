@@ -113,14 +113,9 @@
 .sign-item-link.btn:hover{
     background-color:#03999e;
 }
-.background{
-    background-image: url('../img/single-post-bg.fe05ed7c.jpg');
-    width: 100%;
-    height: 90vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
+
+
+
 .review{
     margin-top: 60px;
 }
