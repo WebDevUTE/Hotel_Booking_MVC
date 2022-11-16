@@ -163,7 +163,7 @@
 	                        <img src='${listingHotels.imageUrl}' alt="" class="place-img"/>
 	                        <div class="place-content">
 	                            <span class="address">${listingHotels.address }</span>
-	                            <a href="">${listingHotels.hotelName}</a>
+	                            <a href="hotelDetails?hotelId=${listingHotels.hotelId}">${listingHotels.hotelName}</a>
 	                            <span class="price">$${listingHotels.price }.00/Night</span>
 	                            <div class="assess">
 	                                <div class="star">
@@ -176,7 +176,7 @@
 	                                <div class="comment">Bad (12)</div>
 	                            </div>
 	                            <div class="place-view">
-	                                <a href="roomDetails">
+	                                <a href="hotelDetails?hotelId=${listingHotels.hotelId}">
 	                                    <i class="fas fa-external-link-alt view-icon"></i>
 	                                    View Details
 	                                </a>

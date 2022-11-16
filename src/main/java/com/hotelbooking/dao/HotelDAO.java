@@ -46,6 +46,20 @@ public class HotelDAO {
 		return hotels;
 	}
 	
+	public Hotel getHotelDetailById(int id) {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		String query = "SELECT h FROM Hotel h WHERE h.hotelId=:id";
+		TypedQuery<Hotel> q = em.createQuery(query, Hotel.class);
+		q.setParameter("id", id);
+		Hotel hotelDetails;
+		try {
+			hotelDetails = q.getSingleResult();
+		} finally {
+			em.close();
+		}
+		return hotelDetails;
+	}
+	
 	public List<Hotel> getHotelsByCategory(int cateID) {
 		EntityManager em = DBUtil.getFactory().createEntityManager();
 		String query = "SELECT h FROM Hotel h INNER JOIN h.category c WHERE c.categoryId=:cateID";
