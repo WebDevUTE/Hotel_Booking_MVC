@@ -1,6 +1,6 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 16, 2022, 11:06:54 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 17, 2022, 2:57:18 PM by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,16 +24,14 @@ public class Category implements java.io.Serializable {
 	private String categoryName;
 	private Integer size;
 	private Set<Hotel> hotels = new HashSet<Hotel>(0);
-	private Set<Hotel> hotels_1 = new HashSet<Hotel>(0);
 
 	public Category() {
 	}
 
-	public Category(String categoryName, Integer size, Set<Hotel> hotels, Set<Hotel> hotels_1) {
+	public Category(String categoryName, Integer size, Set<Hotel> hotels) {
 		this.categoryName = categoryName;
 		this.size = size;
 		this.hotels = hotels;
-		this.hotels_1 = hotels_1;
 	}
 
 	@Id
@@ -73,15 +71,6 @@ public class Category implements java.io.Serializable {
 
 	public void setHotels(Set<Hotel> hotels) {
 		this.hotels = hotels;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
-	public Set<Hotel> getHotels_1() {
-		return this.hotels_1;
-	}
-
-	public void setHotels_1(Set<Hotel> hotels_1) {
-		this.hotels_1 = hotels_1;
 	}
 
 }

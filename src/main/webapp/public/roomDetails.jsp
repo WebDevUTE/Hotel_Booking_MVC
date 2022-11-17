@@ -76,7 +76,7 @@
                         
                     </div>
                     <div class="price-and-date">
-                        <form action="bookingHotel?hotelId=${hotelDetail.hotelId }" method="POST" class="submit-price">
+                        <form action="bookingForm?hotelId=${hotelDetail.hotelId }" method="POST" class="submit-price">
                             <div class="price">
                                 <h1 style="margin-bottom: 10px;color:#008489;">$${hotelDetail.price }<span style="color:black;"> / night</span></h1>
                             </div>
