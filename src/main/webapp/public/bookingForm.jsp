@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*, java.text.*"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,28 +54,27 @@
                         <h1 class="payRoom-heading">Booking information</h1>
                         <div class="payRoom-detail-payment">
                             <div class="payRoom-detail-img">
-                                <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                                <img src="${hotel.imageUrl }" alt="">
                                 <div class="payRoom-detail-desc">
-                                    <h3>Hotel Name</h3>
-                                    <p>Type of room</p>
+                                    <h3>${hotel.hotelName }</h3>
                                 </div>
                             </div>
                             <div class="payRoom-date">
                                 <div class="payRoom-checkin">
                                     <span class="date">Checkin Date</span>
-                                    <span>07/10/2022</span>
+                                    <span>${newBooking.checkinDate }</span>
                                 </div>
                                 <div class="payRoom-checkout">
                                     <span class="date">Checkout Date</span>
-                                    <span>08/10/2022</span>
+                                    <span>${newBooking.checkoutDate }</span>
                                 </div>
                                 <div class="quantity-room">
                                     <span>Number of guests</span>
-                                    <span>1 khách, 1 phòng</span>
+                                    <span>${newBooking.guest } Guests, ${newBooking.rooms} Rooms</span>
                                 </div>
                                 <div class="price-per-night">
-                                    <span>1 phòng x 6 đêm</span>
-                                    <span>18,192,000 VND</span>
+                                    <span>${newBooking.rooms } rooms x ${newBooking.checkoutDate - newBooking.checkinDate} nights</span>
+                                    <span>${hotel.price * (newBooking.checkoutDate - newBooking.checkinDate)}</span>
                                 </div>
                             </div>
                             <div class="payRoom-total">

@@ -48,9 +48,6 @@ public class LoginServlet extends HttpServlet {
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
-			Cookie userCookie = new Cookie("user", email);
-			userCookie.setMaxAge(60 * 60 * 24);
-			response.addCookie(userCookie);
 			getServletContext()
 			.getRequestDispatcher("/home")
 			.forward(request, response);
