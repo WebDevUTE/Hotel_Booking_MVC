@@ -76,7 +76,8 @@
 .header-navbar{
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 50px;
     align-items: center;
 }
 .menu{
