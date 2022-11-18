@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*, java.text.*"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,24 +63,28 @@
                             <div class="payRoom-date">
                                 <div class="payRoom-checkin">
                                     <span class="date">Checkin Date</span>
-                                    <span>${newBooking.checkinDate }</span>
+                                    <span><fmt:formatDate pattern  = "dd-MM-yyyy" value = "${newBooking.checkinDate }" /></span>
                                 </div>
                                 <div class="payRoom-checkout">
                                     <span class="date">Checkout Date</span>
-                                    <span>${newBooking.checkoutDate }</span>
+                                    <span><fmt:formatDate pattern  = "dd-MM-yyyy" value = "${newBooking.checkoutDate }" /></span>
                                 </div>
                                 <div class="quantity-room">
-                                    <span>Number of guests</span>
+                                    <span>Number of guests and rooms</span>
                                     <span>${newBooking.guest } Guests, ${newBooking.rooms} Rooms</span>
                                 </div>
                                 <div class="price-per-night">
-                                    <span>${newBooking.rooms } rooms x ${newBooking.checkoutDate - newBooking.checkinDate} nights</span>
-                                    <span>${hotel.price * (newBooking.checkoutDate - newBooking.checkinDate)}</span>
+                                    <span id="roomPrice">
+                                    <%-- ${newBooking.rooms } rooms x ${newBooking.checkoutDate - newBooking.checkinDate} nights --%>
+                                    </span>
+                                    <span id="totalRoomPrice">
+                                    <%-- ${hotel.price * (newBooking.checkoutDate - newBooking.checkinDate)} --%>
+                                    </span>
                                 </div>
                             </div>
                             <div class="payRoom-total">
                                 <span class="total-heading">Total</span>
-                                <span class="price">$350</span>
+                                <span class="price"></span>
                             </div>
                         </div>
                     </div>
@@ -87,6 +92,32 @@
             </div>
         </section>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/public/js/bookingForm.js"></script>
+    <script>
+    	const checkin = "${newBooking.checkinDate}"
+    	const checkout = "${newBooking.checkoutDate}"
+		const rooms = ${newBooking.rooms}
+    	const price = ${hotel.price}
+    	const arraycheckin = checkin.split(" ")
+    	arraycheckin.splice(3,2)
+    	console.log(arraycheckin.join(" "))
+    	let date1 = new Date(arraycheckin)
+    	console.log(date1)
+
+    	const arraycheckout = checkout.split(" ")
+    	arraycheckout.splice(3,2)
+    	console.log(arraycheckout.join(" "))
+    	let date2 = new Date(arraycheckout)
+    	console.log(date2)
+    	var Difference_In_Time = date2.getTime() - date1.getTime();
+    	var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    	
+    	$(document).ready(function(){
+    		$("#roomPrice").text(rooms + " " + "rooms x "+ Difference_In_Days + " nights");
+    		$("#totalRoomPrice").text("$"+price*Difference_In_Days)
+    		$(".price").text("$"+price*Difference_In_Days)
+    	})
+    </script>
 </body>
 </html>
