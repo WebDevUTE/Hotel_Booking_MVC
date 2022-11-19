@@ -1,6 +1,6 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 17, 2022, 2:57:18 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 19, 2022, 5:18:30 PM by Hibernate Tools 4.3.6.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -32,19 +32,21 @@ public class Booking implements java.io.Serializable {
 	private Date checkoutDate;
 	private Integer rooms;
 	private Integer guest;
+	private Long total;
 	private Set<BookingUserInfo> bookingUserInfos = new HashSet<BookingUserInfo>(0);
 
 	public Booking() {
 	}
 
 	public Booking(Hotel hotel, User user, Date checkinDate, Date checkoutDate, Integer rooms, Integer guest,
-			Set<BookingUserInfo> bookingUserInfos) {
+			Long total, Set<BookingUserInfo> bookingUserInfos) {
 		this.hotel = hotel;
 		this.user = user;
 		this.checkinDate = checkinDate;
 		this.checkoutDate = checkoutDate;
 		this.rooms = rooms;
 		this.guest = guest;
+		this.total = total;
 		this.bookingUserInfos = bookingUserInfos;
 	}
 
@@ -60,7 +62,7 @@ public class Booking implements java.io.Serializable {
 		this.bookingId = bookingId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Hotel_ID")
 	public Hotel getHotel() {
 		return this.hotel;
@@ -70,7 +72,7 @@ public class Booking implements java.io.Serializable {
 		this.hotel = hotel;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "User_ID")
 	public User getUser() {
 		return this.user;
@@ -118,7 +120,16 @@ public class Booking implements java.io.Serializable {
 		this.guest = guest;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "booking")
+	@Column(name = "Total", precision = 10, scale = 0)
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
+	}
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "booking")
 	public Set<BookingUserInfo> getBookingUserInfos() {
 		return this.bookingUserInfos;
 	}

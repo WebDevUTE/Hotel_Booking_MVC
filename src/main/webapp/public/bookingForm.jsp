@@ -35,15 +35,15 @@
                                     <li>Customers under the age of 18 cannot stay alone.</li>
                                 </ul>
                             </div>
-                            <form action="" class="payRoom-submit">
-                                <label for="">First Name</label>
-                                <input type="text" required>
-                                <label for="">Last Name</label>
-                                <input type="text" required>
-                                <label for="">Email</label>
-                                <input type="email" name="" id="" required>
-                                <label for="">Phone Number</label>
-                                <input type="text" name="" id="" required>
+                            <form action="finishBooking?bookingId=${newBooking.bookingId}" method = "POST"  class="payRoom-submit">
+                                <label for="firstName">First Name</label>
+                                <input name="firstName" type="text" required>
+                                <label for="lastName">Last Name</label>
+                                <input name="lastName" type="text" required>
+                                <label for="email">Email</label>
+                                <input name="email" type="email" required>
+                                <label for="phone">Phone Number</label>
+                                <input name="phone" type="text" required>
                                 <div class="btn-submit">
                                     <h2>By submitting this reservation, I acknowledge that I have read and agree to <a href="privacy" target="_blank">TripFinder Privacy</a></h2>
                                     <button type="submit" class="submitBtn">Book Hotel</button>
@@ -115,8 +115,8 @@
     	
     	$(document).ready(function(){
     		$("#roomPrice").text(rooms + " " + "rooms x "+ Difference_In_Days + " nights");
-    		$("#totalRoomPrice").text("$"+price*Difference_In_Days)
-    		$(".price").text("$"+price*Difference_In_Days)
+    		$("#totalRoomPrice").text("$"+price*Difference_In_Days*rooms)
+    		$(".price").text("$"+price*Difference_In_Days*rooms)
     	})
     </script>
 </body>
