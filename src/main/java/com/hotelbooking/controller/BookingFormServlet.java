@@ -62,14 +62,12 @@ public class BookingFormServlet extends HttpServlet {
 			// Hotel is booked
 			int hotelId = Integer.parseInt(request.getParameter("hotelId"));
 			Hotel hotel = hotelDAO.getHotelDetailById(hotelId);
-			long total = hotel.getPrice() * room * getDateDif(checkoutDate, checkinDate);
 
 			Booking newBooking = new Booking();
 			newBooking.setCheckinDate(checkinDate);
 			newBooking.setCheckoutDate(checkoutDate);
 			newBooking.setRooms(room);
 			newBooking.setGuest(guest);
-			newBooking.setTotal(total);
 			newBooking.setHotel(hotel);
 			newBooking.setUser(user);
 
@@ -94,12 +92,6 @@ public class BookingFormServlet extends HttpServlet {
 		Date parsedDate = fomartter.parse(date);
 		
 		return parsedDate;
-	}
-	
-	public int getDateDif(Date d1, Date d2) {
-		long dif_in_time = d2.getTime() - d1.getTime();
-		
-		return (int) Math.abs(( dif_in_time / (1000*60*60*24)) % 365);
 	}
 
 }

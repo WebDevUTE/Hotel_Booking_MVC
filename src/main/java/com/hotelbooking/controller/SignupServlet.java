@@ -44,7 +44,6 @@ public class SignupServlet extends HttpServlet {
 		user.setUserName(userName);
 		user.setEmail(email);
 		user.setPassword(hashPassword);
-		user.setIsAdmin(false);
 		
 		try { 
 			userDAO.createUser(user);
