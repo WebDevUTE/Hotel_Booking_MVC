@@ -45,17 +45,14 @@ public class LoginServlet extends HttpServlet {
 		if(!isMatchPassword) {
 			url = "/public/login.jsp";
 		}
-		else if(user.getIsAdmin() == true) {
-			System.out.println("vo day");
-			url = "/admin_page/index.jsp";
-		}
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
+			getServletContext()
+			.getRequestDispatcher("/home")
+			.forward(request, response);
 		}
-		getServletContext()
-		.getRequestDispatcher(url)
-		.forward(request, response);
+		
 	}
 
 }

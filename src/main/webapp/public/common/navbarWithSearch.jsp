@@ -40,10 +40,7 @@
 	                    <a href="" class="user-panner-item-link">Account Settings</a>
 	                </li>
 	                <li class="user-panner-item">
-	                    <a href="bookingHistory" class="user-panner-item-link">Booking History</a>
-	                </li>
-	                <li class="user-panner-item">
-	                    <a href="${pageContext.request.contextPath}/logout" class="user-panner-item-link">Logout</a>
+	                    <a href="" class="user-panner-item-link">Logout</a>
 	                </li>
 	            </ul>
 	        </li>
