@@ -202,6 +202,11 @@
 .user-booking-room{
     margin-bottom: 20px;
 }
+
+.user-booking-datecheck {
+	margin-top: 36px;
+	margin-bottom: 20px;
+}
 .user-booking-guest-input,
 .user-booking-room-input{
     outline: none;

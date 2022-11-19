@@ -1,6 +1,6 @@
 package com.hotelbooking.model;
 // default package
-// Generated Nov 17, 2022, 2:57:18 PM by Hibernate Tools 4.3.6.Final
+// Generated Nov 19, 2022, 5:18:30 PM by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,7 +48,7 @@ public class BookingUserInfo implements java.io.Serializable {
 		this.bookingUserInfoId = bookingUserInfoId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Booking_ID", unique = true)
 	public Booking getBooking() {
 		return this.booking;
