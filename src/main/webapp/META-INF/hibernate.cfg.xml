@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
                                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- <session-factory name="com.HotelBooking">
-  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-  <property name="hibernate.connection.password">19052002</property>
-  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hotel_booking</property>
-  <property name="hibernate.connection.username">vinhprs</property>
-  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-  <property name="hibernate.show_sql">true</property>
- </session-factory>
+	<session-factory name="com.HotelBooking">
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_b4890131456818b</property>
+		<property name="hibernate.connection.username">b097aab3fc1408</property>
+		<property name="hibernate.connection.password">3ffcb90c</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+	</session-factory>
 </hibernate-configuration>

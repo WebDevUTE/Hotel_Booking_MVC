@@ -47,15 +47,14 @@ public class LoginServlet extends HttpServlet {
 		}
 		else if(user.getIsAdmin() == true) {
 			System.out.println("vo day");
-			url = "/admin_page/index.jsp";
+			url = "/admin";
 		}
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 		}
-		getServletContext()
-		.getRequestDispatcher(url)
-		.forward(request, response);
+		
+		response.sendRedirect(request.getContextPath() + url);
 	}
 
 }

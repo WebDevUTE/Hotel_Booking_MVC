@@ -45,7 +45,7 @@ public class HomeServlet extends HttpServlet {
 		request.setAttribute("villa", villa);
 		
 		List<Hotel> resort;
-		resort = hotelDAO.getHotelsByCategory(1);
+		resort = hotelDAO.getHotelsByCategory(3);
 		// Set request
 		request.setAttribute("resort", resort);
 		
