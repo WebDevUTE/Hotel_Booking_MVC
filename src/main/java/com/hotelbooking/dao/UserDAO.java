@@ -3,6 +3,8 @@ package com.hotelbooking.dao;
 import com.hotelbooking.model.User;
 import com.hotelbooking.JPA.DBUtil;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
@@ -41,5 +43,22 @@ public class UserDAO {
 			em.close();
 		}
 		return user;
+	}
+	
+	public List<User> getAllUser() {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		String query = "SELECT u FROM User u";
+		
+		TypedQuery<User> q = em.createQuery(query, User.class);
+		List<User> allUsers;
+		try {
+			allUsers = q.getResultList();
+			if(allUsers == null || allUsers.isEmpty()) {
+				allUsers = null;
+			}
+		} finally {
+			em.close();
+		} 
+		return allUsers;
 	}
 }

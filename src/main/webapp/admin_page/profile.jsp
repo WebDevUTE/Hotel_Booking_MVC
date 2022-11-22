@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Hotel Dashboard Template</title>
+	<title>TripFinder Admin</title>
 	<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/admin_page/assets/img/favicon.png">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/admin_page/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/admin_page/assets/plugins/fontawesome/css/all.min.css">
@@ -37,7 +37,7 @@
 						<div class="profile-header">
 							<div class="row align-items-center">
 								<div class="col-auto profile-image">
-									<a href="#"> <img class="rounded-circle" alt="User Image" src="assets/img/profiles/avatar-02.jpg"> </a>
+									<a href="#"> <img class="rounded-circle" alt="User Image" src="${pageContext.request.contextPath}/admin_page/assets/img/profiles/avatar-02.jpg"> </a>
 								</div>
 								<div class="col ml-md-n2 profile-user-info">
 									<h4 class="user-name mb-3">Nguyen Cao Hong Vinh</h4>
@@ -70,14 +70,14 @@
 												</div>
 												<div class="row">
 													<p class="col-sm-3 text-sm-right mb-0 mb-sm-3">Mobile</p>
-													<p class="col-sm-9">305-310-5857</p>
+													<p class="col-sm-9">0916272466</p>
 												</div>
 												<div class="row">
 													<p class="col-sm-3 text-sm-right mb-0">Address</p>
-													<p class="col-sm-9 mb-0">4663 Agriculture Lane,
-														Miami,
-														Florida - 33165,
-														United States.</p>
+													<p class="col-sm-9 mb-0">5/6/5 Le Van Chi Street,
+														Linh Trung ward,
+														Thu Duc city,
+														Ho Chi Minh city.</p>
 												</div>
 											</div>
 										</div>

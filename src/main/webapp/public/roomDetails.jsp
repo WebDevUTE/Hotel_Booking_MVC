@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="user-booking-room">
                                     <h3 class="user-booking-room-heading" style="color:#008489;">Room</h3>
-                                    <input name = "room" type="number" class="user-booking-room-input" min=0 max=${hotelDetail.rooms}>
+                                    <input name = "room" type="number" class="user-booking-room-input" min=0 max=${hotelDetail.availableRooms}>
                                 </div>
                             </div>
                             <button type="submit" class="checkRoom-btn">Book Hotel</button>

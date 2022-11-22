@@ -1,10 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Hotel Dashboard Template</title>
+	<title>TripFinder Admin</title>
 	<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/admin_page/assets/img/logoadmin.svg">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/admin_page/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/admin_page/assets/plugins/fontawesome/css/all.min.css">
@@ -24,7 +26,7 @@
 					<div class="row align-items-center">
 						<div class="col">
 							<div class="mt-5">
-								<h4 class="card-title float-left mt-2">All Hotels</h4> <a href="add-room.html" class="btn btn-primary float-right veiwbutton">Add Room</a> </div>
+								<h4 class="card-title float-left mt-2">All Hotels</h4> <a href="addHotel" class="btn btn-primary float-right veiwbutton">Add Room</a> </div>
 						</div>
 					</div>
 				</div>
@@ -45,227 +47,25 @@
 											</tr>
 										</thead>
 										<tbody>
+										<c:forEach items='${allHotels}' var="allHotels">
 											<tr>
-												<td>BKG-0001</td>
+												<td>${allHotels.hotelId }</td>
 												<td>
 													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
+                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="${allHotels.imageUrl}" alt="Hotel Image"></div>
+                                                    <span style="font-size: 15px;">${allHotels.hotelName }</span>
                                                     </h2>
                                                 </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
+                                                <td>${allHotels.address }</td>
+												<td>${allHotels.rooms }</td>
+												<td>${allHotels.price }</td>
 												<td class="text-right">
 													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="editHotel"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
 													</div>
 												</td>
 											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>BKG-0001</td>
-												<td>
-													<h2 class="table-avatar">
-                                                    <div class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></div>
-                                                    <span style="font-size: 15px;">Hotel Name</span>
-                                                    </h2>
-                                                </td>
-                                                <td>Address Hotel</td>
-												<td>200 Rooms</td>
-												<td>$526.2</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-room.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-													</div>
-												</td>
-											</tr>
+										</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -277,8 +77,8 @@
 			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
-						<div class="modal-body text-center"> <img src="assets/img/sent.png" alt="" width="50" height="46">
-							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+						<div class="modal-body text-center"> <img src="${pageContext.request.contextPath}/admin_page/assets/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Hotel?</h3>
 							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
 								<button type="submit" class="btn btn-danger">Delete</button>
 							</div>
@@ -289,14 +89,14 @@
 		</div>
 	</div>
 	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-	<script src="assets/js/jquery-3.5.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="assets/plugins/raphael/raphael.min.js"></script>
-	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="assets/plugins/datatables/datatables.min.js"></script>
-	<script src="assets/js/script.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/js/popper.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/plugins/raphael/raphael.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/plugins/datatables/datatables.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/js/script.js"></script>
 </body>
 
 </html>

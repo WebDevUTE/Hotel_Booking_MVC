@@ -7,6 +7,7 @@ import com.hotelbooking.model.Hotel;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
@@ -76,4 +77,20 @@ public class HotelDAO {
 		}
 		return hotels;
 	}
+	
+	public void updateHotel(Hotel hotel) {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		EntityTransaction eTrans = em.getTransaction();
+		try {
+			eTrans.begin();
+			em.merge(hotel);
+			eTrans.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			eTrans.rollback();
+		} finally { 
+			em.close();
+		}
+	}
+	
 }

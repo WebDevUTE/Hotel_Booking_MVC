@@ -56,4 +56,19 @@ public class BookingDAO {
 		}
 		return allBookings;
 	}
+	
+	public void checkoutBooking(Booking booking) {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		EntityTransaction eTrans = em.getTransaction();
+		try {
+			eTrans.begin();
+			em.remove(em.merge(booking));
+			eTrans.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			eTrans.rollback();
+		} finally {
+			em.close();
+		}
+	}
 }

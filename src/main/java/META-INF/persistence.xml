@@ -9,11 +9,11 @@
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_b4890131456818b?enabledTLSProtocols=TLSv1.2" />
+				value="jdbc:mysql://localhost:3306/hotel_booking?reconnect=true" />
 			<property name="javax.persistence.jdbc.user"
-				value="b097aab3fc1408" />
+				value="vinhprs" />
 			<property name="javax.persistence.jdbc.password"
-				value="3ffcb90c" />
+				value="19052002" />
 				
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />

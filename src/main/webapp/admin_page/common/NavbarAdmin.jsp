@@ -18,7 +18,6 @@
 						<li class="submenu"> <a href="#"><i class="fas fa-key"></i> <span> Hotels </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="allHotels">All Hotels </a></li>
-								<li><a href="editHotel"> Edit Hotel </a></li>
 								<li><a href="addHotel"> Add Hotel </a></li>
 							</ul>
 						</li>	

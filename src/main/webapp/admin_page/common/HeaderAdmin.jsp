@@ -16,7 +16,7 @@
 								<h6>Nguyen Vinh</h6>
 								<p class="text-muted mb-0">Administrator</p>
 							</div>
-						</div> <a class="dropdown-item" href="${pageContext.request.contextPath}/admin_page/profile.jsp">My Profile</a> <a class="dropdown-item" href="logout">Logout</a> </div>
+						</div> <a class="dropdown-item" href="profile">My Profile</a> <a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Logout</a> </div>
 				</li>
 			</ul>
 		</div>
