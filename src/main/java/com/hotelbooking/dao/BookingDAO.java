@@ -1,5 +1,7 @@
 package com.hotelbooking.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
@@ -37,5 +39,21 @@ public class BookingDAO {
 			em.close();
 		}
 		return booking;
+	}
+	
+	public List<Booking> getAllBooking() {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		String query = "SELECT b FROM Booking b";
+		TypedQuery<Booking> q = em.createQuery(query, Booking.class);
+		List<Booking> allBookings;
+		try {
+			allBookings = q.getResultList();
+			if(allBookings == null || allBookings.isEmpty()) {
+				allBookings = null;
+			}
+		} finally {
+			em.close();
+		}
+		return allBookings;
 	}
 }
