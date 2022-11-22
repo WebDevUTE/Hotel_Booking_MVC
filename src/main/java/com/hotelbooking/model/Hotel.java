@@ -31,6 +31,7 @@ public class Hotel implements java.io.Serializable {
 	private String address;
 	private Long price;
 	private Integer rooms;
+	private Integer availableRooms;
 	private Set<Booking> bookings = new HashSet<Booking>(0);
 	private Set<Rating> ratings = new HashSet<Rating>(0);
 
@@ -38,7 +39,7 @@ public class Hotel implements java.io.Serializable {
 	}
 
 	public Hotel(Category category, Destination destination, String hotelName, String imageUrl, String description,
-			String address, Long price, Integer rooms, Set<Booking> bookings, Set<Rating> ratings) {
+			String address, Long price, Integer rooms, Integer availableRooms, Set<Booking> bookings, Set<Rating> ratings) {
 		this.category = category;
 		this.destination = destination;
 		this.hotelName = hotelName;
@@ -47,6 +48,7 @@ public class Hotel implements java.io.Serializable {
 		this.address = address;
 		this.price = price;
 		this.rooms = rooms;
+		this.availableRooms = availableRooms;
 		this.bookings = bookings;
 		this.ratings = ratings;
 	}
@@ -135,6 +137,15 @@ public class Hotel implements java.io.Serializable {
 
 	public void setRooms(Integer rooms) {
 		this.rooms = rooms;
+	}
+	
+	@Column(name = "Available_Rooms")
+	public Integer getAvailableRooms() {
+		return this.availableRooms;
+	}
+
+	public void setAvailableRooms(Integer availableRooms) {
+		this.availableRooms = availableRooms;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hotel")

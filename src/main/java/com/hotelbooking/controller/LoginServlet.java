@@ -46,7 +46,6 @@ public class LoginServlet extends HttpServlet {
 			url = "/public/login.jsp";
 		}
 		else if(user.getIsAdmin() == true) {
-			System.out.println("vo day");
 			url = "/admin";
 		}
 		else {

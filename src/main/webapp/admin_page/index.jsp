@@ -1,10 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>TripFinder.</title>
+	<title>TripFinder Admin</title>
 	<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/admin_page/assets/img/logoadmin.svg">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/admin_page/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/admin_page/assets/plugins/fontawesome/css/fontawesome.min.css">
@@ -53,7 +55,7 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header">180</h3>
+										<h3 class="card_widget_header">${available }</h3>
 										<h6 class="text-muted">Available Rooms</h6> </div>
 									<div class="ml-auto mt-md-3 mt-lg-0"> <span class="opacity-7 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#009688" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign">
 									<line x1="12" y1="1" x2="12" y2="23"></line>
@@ -91,7 +93,7 @@
 						<div class="card card-table flex-fill">
 							<div class="card-header">
 								<h4 class="card-title float-left mt-2">Booking</h4>
-								<a href="./all-booking.html" class="btn btn-primary float-right veiwbutton">Veiw All</a>
+								<a href="allBooking" class="btn btn-primary float-right veiwbutton">View All</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
@@ -105,68 +107,22 @@
 												<th class="text-right">Phone Number</th>
 											</tr>
 										</thead>
+									<c:forEach items='${allBookings}' var="allBookings">
 										<tbody>
 											<tr>
 												<td class="text-nowrap">
-													<div>BKG-0001</div>
+													<div>${allBookings.booking.bookingId }</div>
 												</td>
-												<td class="text-nowrap">Tommy Bernal</td>
+												<td class="text-nowrap">${allBookings.name }</td>
 												
-												<td>12414786454545</td>
-												<td class="text-center">Villa</td>
+												<td>${allBookings.bookingUserInfoId }</td>
+												<td class="text-center">${allBookings.booking.hotel.hotelName}</td>
 												<td class="text-right">
-													<div>631-254-6480</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-nowrap">
-													<div>BKG-0001</div>
-												</td>
-												<td class="text-nowrap">Tommy Bernal</td>
-												
-												<td>12414786454545</td>
-												<td class="text-center">Villa</td>
-												<td class="text-right">
-													<div>631-254-6480</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-nowrap">
-													<div>BKG-0001</div>
-												</td>
-												<td class="text-nowrap">Tommy Bernal</td>
-												
-												<td>12414786454545</td>
-												<td class="text-center">Villa</td>
-												<td class="text-right">
-													<div>631-254-6480</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-nowrap">
-													<div>BKG-0001</div>
-												</td>
-												<td class="text-nowrap">Tommy Bernal</td>
-												
-												<td>12414786454545</td>
-												<td class="text-center">Villa</td>
-												<td class="text-right">
-													<div>631-254-6480</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-nowrap">
-													<div>BKG-0001</div>
-												</td>
-												<td class="text-nowrap">Tommy Bernal</td>
-												
-												<td>12414786454545</td>
-												<td class="text-center">Villa</td>
-												<td class="text-right">
-													<div>631-254-6480</div>
+													<div>${allBookings.phone }</div>
 												</td>
 											</tr>
 										</tbody>
+									</c:forEach>
 									</table>
 								</div>
 							</div>

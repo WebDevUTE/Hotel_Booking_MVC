@@ -62,6 +62,8 @@ public class BookingFormServlet extends HttpServlet {
 			// Hotel is booked
 			int hotelId = Integer.parseInt(request.getParameter("hotelId"));
 			Hotel hotel = hotelDAO.getHotelDetailById(hotelId);
+			int availableRooms = hotel.getAvailableRooms() - room;
+			hotel.setAvailableRooms(availableRooms);
 			long total = hotel.getPrice() * room * getDateDif(checkoutDate, checkinDate);
 
 			Booking newBooking = new Booking();
@@ -75,6 +77,7 @@ public class BookingFormServlet extends HttpServlet {
 
 			try {
 				bookingDAO.createBooking(newBooking);
+				hotelDAO.updateHotel(hotel);
 				url = "/public/bookingForm.jsp";
 				request.setAttribute("newBooking", newBooking);
 				request.setAttribute("hotel", hotel);

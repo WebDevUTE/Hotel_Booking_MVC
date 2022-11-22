@@ -5,6 +5,8 @@ package com.hotelbooking.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -129,7 +131,7 @@ public class Booking implements java.io.Serializable {
 		this.total = total;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "booking")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "booking", cascade =  CascadeType.REMOVE)
 	public Set<BookingUserInfo> getBookingUserInfos() {
 		return this.bookingUserInfos;
 	}
