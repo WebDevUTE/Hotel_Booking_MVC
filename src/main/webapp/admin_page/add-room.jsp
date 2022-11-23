@@ -39,18 +39,18 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<form>
+						<form action="addHotel" method="post">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Hotel Name</label> <input class="form-control"
-											type="text" required="required">
+										<label for="hotelName">Hotel Name</label> 
+										<input name="hotelName" class="form-control" type="text" required="required">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Hotel Type</label> <select class="form-control"
-											id="sel1" name="sellist1" required="required">
+										<label for="hotelType">Hotel Type</label> 
+										<select class="form-control" id="sel1" name="hotelType" required="required">
 
 											<option>Villa</option>
 											<option>Hotel</option>
@@ -63,37 +63,40 @@
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Number of Rooms</label> <input class="form-control"
-											type="text" required="required">
+										<label for="rooms">Number of Rooms</label> 
+										<input name="rooms" class="form-control" type="text" required="required">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Destinations</label> <select class="form-control"
+										<label for="destination" >Destinations</label> 
+										<select class="form-control" name="destination"
 											id="sel5" name="sellist1" required="required">
 											<option>London</option>
 											<option>Paris</option>
-											<option>America</option>
+											<option>Newyork</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Address</label> <input type="text" class="form-control"
+										<label for="address">Address</label> 
+										<input type="text" class="form-control" name="address"
 											id="usr" required="required">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Price per Night</label> <input type="text"
+										<label for="price">Price per Night</label> 
+										<input type="text" name="price"
 											class="form-control" id="usr1" required="required">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Description</label>
+										<label for="description">Description</label>
 										<textarea class="form-control" rows="5" id="comment"
-											name="text" required="required"></textarea>
+											name="description" required="required"></textarea>
 									</div>
 								</div>
 							</div>

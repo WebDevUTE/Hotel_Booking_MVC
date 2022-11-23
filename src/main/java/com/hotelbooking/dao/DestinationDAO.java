@@ -25,4 +25,20 @@ public class DestinationDAO {
 		}
 		return des;
 	}
+	
+	public Destination getDesFromName(String desName) {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		String query = "SELECT d FROM Destination d WHERE d.desName=:desName";
+		TypedQuery<Destination> q = em.createQuery(query, Destination.class);
+		q.setParameter("desName", desName);
+		Destination des = null;
+		try {
+			des = q.getSingleResult();
+		} catch(NoResultException e) {
+			System.out.println(e);
+		} finally {
+			em.close();
+		}
+		return des;
+	}
 }

@@ -46,7 +46,6 @@ public class SignupServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/verify";
-		String message = "";
 		String userName = request.getParameter("username");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -58,8 +57,6 @@ public class SignupServlet extends HttpServlet {
 		
 		User existUser = userDAO.getUserByEmail(email);
 		if(existUser != null) {
-			message = "This email is already taken!";
-//			url = "/signup";
 			request.setAttribute("message", true);
 			request.getRequestDispatcher("/public/signup.jsp").forward(request, response);
 		}
@@ -86,8 +83,6 @@ public class SignupServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + url);
 			
 		}
-//		request.setAttribute("message", false);
-		/* response.sendRedirect(request.getContextPath() + url); */
 	}
 
 }

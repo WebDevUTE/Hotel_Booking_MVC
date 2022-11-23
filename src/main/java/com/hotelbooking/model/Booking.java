@@ -64,7 +64,7 @@ public class Booking implements java.io.Serializable {
 		this.bookingId = bookingId;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER , cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "Hotel_ID")
 	public Hotel getHotel() {
 		return this.hotel;

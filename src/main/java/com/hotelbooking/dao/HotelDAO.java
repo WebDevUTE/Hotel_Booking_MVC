@@ -78,6 +78,21 @@ public class HotelDAO {
 		return hotels;
 	}
 	
+	public void addHotel(Hotel hotel) {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		EntityTransaction eTransactions = em.getTransaction();
+		try {
+			eTransactions.begin();
+			em.persist(hotel);
+			eTransactions.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			eTransactions.rollback();
+		} finally {
+			em.close();
+		}
+	}
+	
 	public void updateHotel(Hotel hotel) {
 		EntityManager em = DBUtil.getFactory().createEntityManager();
 		EntityTransaction eTrans = em.getTransaction();
@@ -89,6 +104,21 @@ public class HotelDAO {
 			e.printStackTrace();
 			eTrans.rollback();
 		} finally { 
+			em.close();
+		}
+	}
+	
+	public void deleteHotel(Hotel hotel) {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		EntityTransaction eTrans = em.getTransaction();
+		try {
+			eTrans.begin();
+			em.remove(em.merge(hotel));
+			eTrans.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			eTrans.rollback();
+		} finally {
 			em.close();
 		}
 	}

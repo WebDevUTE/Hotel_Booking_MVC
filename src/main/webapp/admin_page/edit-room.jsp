@@ -41,7 +41,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<form action="${pageContext.request.contextPath}/editHotel" method="post">
+						<form action="${pageContext.request.contextPath}/editHotel?hotelId=${hotel.hotelId}" method="post">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">

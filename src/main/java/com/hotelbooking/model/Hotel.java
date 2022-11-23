@@ -4,6 +4,8 @@ package com.hotelbooking.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -65,7 +67,7 @@ public class Hotel implements java.io.Serializable {
 		this.hotelId = hotelId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Category_ID")
 	public Category getCategory() {
 		return this.category;
@@ -75,7 +77,7 @@ public class Hotel implements java.io.Serializable {
 		this.category = category;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Destination_ID")
 	public Destination getDestination() {
 		return this.destination;
@@ -148,7 +150,7 @@ public class Hotel implements java.io.Serializable {
 		this.availableRooms = availableRooms;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hotel")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "hotel", cascade = CascadeType.REMOVE)
 	public Set<Booking> getBookings() {
 		return this.bookings;
 	}

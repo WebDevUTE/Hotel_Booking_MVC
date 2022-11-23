@@ -81,36 +81,19 @@
 													<td class="text-right">
 														<div class="dropdown dropdown-action">
 															<a href="#" class="action-icon dropdown-toggle"
-																data-toggle="dropdown" aria-expanded="false"><i
+																data-toggle="dropdown" data-id="${allBookings.booking.bookingId} aria-expanded="false"><i
 																class="fas fa-ellipsis-v ellipse_color"></i></a>
 															<div class="dropdown-menu dropdown-menu-right">
-																<a class="dropdown-item" href="#" data-toggle="modal"
-																	data-target="#delete_asset"><i
-																	class="fas fa-check-square m-r-5"></i> Checkout</a>
+																<form action="checkout?bookingId=${allBookings.booking.bookingId }" method="post">
+																		<button type="submit" class="dropdown-item" 
+																		class="fas fa-pencil-alt m-r-5">Checkout</button>
+																</form>
+														
 															</div>
 														</div>
 													</td>
 												</tr>
-												<div id="delete_asset" class="modal fade delete-modal"
-													role="dialog">
-													<div class="modal-dialog modal-dialog-centered">
-														<div class="modal-content">
-															<div class="modal-body text-center">
-																<img
-																	src="${pageContext.request.contextPath}/admin_page/assets/img/sent.png"
-																	alt="" width="50" height="46">
-																<h3 class="delete_class">Are you sure want to
-																	checkout for this Customer?</h3>
-																<div class="m-t-20">
-																	<a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-																	<form action="checkout?bookingId=${allBookings.booking.bookingId}" method="post">
-																		<button class="btn btn-danger" type="submit">Checkout</button>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
+												
 											</c:forEach>
 										</tbody>
 									</table>
@@ -123,24 +106,32 @@
 
 		</div>
 	</div>
-	<script data-cfasync="false"
-		src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/admin_page/assets/js/jquery-3.5.1.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/admin_page/assets/js/popper.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/admin_page/assets/js/bootstrap.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/admin_page/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/admin_page/assets/plugins/datatables/datatables.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/admin_page/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/admin_page/assets/plugins/raphael/raphael.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/admin_page/assets/js/script.js"></script>
+	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script	src="${pageContext.request.contextPath}/admin_page/assets/js/jquery-3.5.1.min.js"></script>
+	<script	src="${pageContext.request.contextPath}/admin_page/assets/js/popper.min.js"></script>
+	<script	src="${pageContext.request.contextPath}/admin_page/assets/js/bootstrap.min.js"></script>
+	<script	src="${pageContext.request.contextPath}/admin_page/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script	src="${pageContext.request.contextPath}/admin_page/assets/plugins/datatables/datatables.min.js"></script>
+	<script	src="${pageContext.request.contextPath}/admin_page/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/plugins/raphael/raphael.min.js"></script>
+	<script src="${pageContext.request.contextPath}/admin_page/assets/js/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		
+	<script>
+	 document.addEventListener('DOMContentLoaded', function() {
+	        var patientIndex  
+	        var saveForm = document.forms['checkout-form']
+	        const btnSave = document.getElementById('btn-checkout')
+	        $('#delete_asset').on('show.bs.modal', function (event) {
+	        var button = $(event.relatedTarget)
+	        patientIndex = button.data('id')
+	})
+	        btnSave.onclick = function() {
+	          saveForm.action = '/checkout?bookingId=' + patientIndex
+	          saveForm.submit()
+	        }
+	    })
+	</script>
 </body>
 
 </html>
