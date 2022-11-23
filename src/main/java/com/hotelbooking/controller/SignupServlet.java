@@ -16,6 +16,8 @@ import com.hotelbooking.dao.UserDAO;
 import com.hotelbooking.email_utils.EmailUtility;
 import com.hotelbooking.model.User;
 
+import net.bytebuddy.implementation.bytecode.Throw;
+
 
 @WebServlet(name= "SignupServlet", value = "/signup")
 public class SignupServlet extends HttpServlet {
@@ -57,29 +59,35 @@ public class SignupServlet extends HttpServlet {
 		User existUser = userDAO.getUserByEmail(email);
 		if(existUser != null) {
 			message = "This email is already taken!";
-			url = "/signup";
+//			url = "/signup";
+			request.setAttribute("message", true);
+			request.getRequestDispatcher("/public/signup.jsp").forward(request, response);
 		}
-		
-		User user = new User();
-		user.setUserName(userName);
-		user.setEmail(email);
-		user.setPassword(hashPassword);
-		user.setIsAdmin(false);
-		user.setOtpCode(randomOtp);
-		user.setIsActivate(false);
-		
-		try { 
-			userDAO.createUser(user);
-			System.out.println(host + " " + port + " " + username);
-			HttpSession session = request.getSession();
-			session.setAttribute("newUser", user);
-			EmailUtility.sendEmail(host, port, username, mailPassword, email, "Use this otp to activate your account",
-					user.getOtpCode());
-		} catch(Exception e) {
-			e.printStackTrace();
+		else {
+			User user = new User();
+			user.setUserName(userName);
+			user.setEmail(email);
+			user.setPassword(hashPassword);
+			user.setIsAdmin(false);
+			user.setOtpCode(randomOtp);
+			user.setIsActivate(false);
+			
+			try { 
+				userDAO.createUser(user);
+				System.out.println(host + " " + port + " " + username);
+				HttpSession session = request.getSession();
+				session.setAttribute("newUser", user);
+				EmailUtility.sendEmail(host, port, username, mailPassword, email, "Use this otp to activate your account",
+						user.getOtpCode());
+			} catch(Exception e) {
+				e.printStackTrace();
+				
+			}
+			response.sendRedirect(request.getContextPath() + url);
+			
 		}
-		request.setAttribute("message", message);
-		response.sendRedirect(request.getContextPath() + url);
+//		request.setAttribute("message", false);
+		/* response.sendRedirect(request.getContextPath() + url); */
 	}
 
 }

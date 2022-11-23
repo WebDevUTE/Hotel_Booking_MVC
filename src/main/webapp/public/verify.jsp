@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +38,9 @@
                     </div>
                     <input type="submit" value="Activate" class="btn-primary">
                 </form>
+                <c:if test="${message eq true }">
+                	<span>Incorrect OTP code</span>
+                </c:if>
             </div>
         </div>
 

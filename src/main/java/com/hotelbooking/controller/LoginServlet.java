@@ -42,27 +42,37 @@ public class LoginServlet extends HttpServlet {
 		User user = userDAO.getUserByEmail(email);
 		if(user == null) {
 			message = "This email is not registered!";
-			url = "/login";
+			/* url = "/login"; */
+			request.setAttribute("message", 1);
+			request.getRequestDispatcher("/public/login.jsp").forward(request, response);
+		}
+		else {
+			boolean isMatchPassword = BCrypt.checkpw(password, user.getPassword());
+			System.out.println(isMatchPassword);
+			if(!isMatchPassword) {
+				message = "Incorrect password";
+				/* url = "/login"; */
+				request.setAttribute("message", 2);
+				request.getRequestDispatcher("/public/login.jsp").forward(request, response);
+			} else if(user.getIsActivate() == false) {
+				message = "Please verify your account!";
+				/* url = "/login"; */
+				request.setAttribute("message", 3);
+				request.getRequestDispatcher("/public/login.jsp").forward(request, response);
+			}
+			else if(user.getIsAdmin() == true) {
+				url = "/admin";
+				response.sendRedirect(request.getContextPath() + url);
+			} 
+			else {
+				HttpSession session = request.getSession();
+				session.setAttribute("user", user);
+				response.sendRedirect(request.getContextPath() + url);
+			}
 		}
 		
-		boolean isMatchPassword = BCrypt.checkpw(password, user.getPassword());
-		System.out.println(isMatchPassword);
-		if(!isMatchPassword) {
-			message = "Incorrect password";
-			url = "/login";
-		} else if(user.getIsActivate() == false) {
-			message = "Please verify your account!";
-			url = "/login";
-		}
-		else if(user.getIsAdmin() == true) {
-			url = "/admin";
-		} 
-		else {
-			HttpSession session = request.getSession();
-			session.setAttribute("user", user);
-		}
-		request.setAttribute("message", message);
-		response.sendRedirect(request.getContextPath() + url);
+		
+		/* request.setAttribute("message", message); */
 	}
 
 }

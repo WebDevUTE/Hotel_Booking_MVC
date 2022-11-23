@@ -35,11 +35,13 @@ public class VerifyServlet extends HttpServlet {
 			user.setOtpCode(null);
 			userDAO.updateUser(user);
 			url = "/login";
+			response.sendRedirect(request.getContextPath() + url);
 		} else {
 			message = "Incorrect otp code. Please enter again!";
 			url = "/verify";
+			request.setAttribute("message", true);
+			request.getRequestDispatcher("/public/verify.jsp").forward(request, response);
 		}
-		response.sendRedirect(request.getContextPath() + url);
 	}
 
 }
