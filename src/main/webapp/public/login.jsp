@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +54,15 @@
                         
                         <small></small>
                     </div>
-
+					<c:if test = '${message eq 1  }'>
+						<span>This email is not registered!</span>
+					</c:if>
+					<c:if test = '${message eq 2  }'>
+						<span>Incorrect password</span>
+					</c:if>
+					<c:if test = '${message eq 3  }'>
+						<span>Please verify your account!</span>
+					</c:if>
                     <div class="modal__body-password">
                         <div class="modal__body-rememberpass">
                             <input class="modal__checked" type="checkbox" name="remember" value=""/>

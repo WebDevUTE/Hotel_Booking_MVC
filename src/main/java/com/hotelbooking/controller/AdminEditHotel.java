@@ -17,6 +17,10 @@ public class AdminEditHotel extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/admin_page/edit-room.jsp";
+		int hotelId = Integer.parseInt(request.getParameter("hotelId"));
+		Hotel toUpdateHotel = hotelDAO.getHotelDetailById(hotelId);
+		
+		request.setAttribute("hotel", toUpdateHotel);
 		getServletContext()
 				.getRequestDispatcher(url)
 				.forward(request, response);

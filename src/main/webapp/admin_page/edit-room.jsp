@@ -46,49 +46,48 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="hotelName">Hotel Name</label>
-										<input name="hotelName" class="form-control" type="text">
+										<input name="hotelName" class="form-control" type="text" value='${hotel.hotelName }'>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="hotelType">Hotel Type</label>
 										<select name="hotelType" class="form-control" id="sel1" >
-										
-											<option>Villa</option>
-											<option>Hotel</option>
-											<option>Resort</option>
-											<option>Cottage</option>
-											<option>Duplex</option>
-											<option>Landscape</option>
+											<option value="Villa">Villa</option>
+											<option value="Hotel">Hotel</option>
+											<option value="Resort">Resort</option>
+											<option value="Cottage">Cottage</option>
+											<option value="Duplex">Duplex</option>
+											<option value="Landscape">Landscape</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="rooms" >Number of Rooms</label>
-										<input name="rooms" class="form-control" type="text">
+										<input name="rooms" class="form-control" type="text" value='${hotel.rooms }'>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="destination" >Destinations</label>
 										<select name="destination" class="form-control" id="sel5" >
-											<option>London</option>
-											<option>Paris</option>
-											<option>America</option>
+											<option value="London">London</option>
+											<option value="Paris">Paris</option>
+											<option value="America">America</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="address">Address</label>
-										<input name="address" type="text" class="form-control" id="usr">
+										<input name="address" type="text" class="form-control" id="usr" value='${hotel.address }'>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="price">Price per Night</label>
-										<input name="price" type="text" class="form-control" id="usr1">
+										<input name="price" type="text" class="form-control" id="usr1" value='${hotel.price }'>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -124,12 +123,17 @@
 
 	<script src="${pageContext.request.contextPath}/admin_page/assets/js/script.js"></script>
 	<script>
+		const string = "${hotel.description}"
 		$(function () {
 			$('#datetimepicker3').datetimepicker({
 				format: 'LT'
 
 			});
 		});
+		$(document).ready(function(){
+    		$("#comment").text(string);
+ 
+    	})
 	</script>
 </body>
 

@@ -83,17 +83,17 @@
                                 <div class="user-booking-datecheck">
                                     <h3 class="user-booking-datecheck-heading" style="margin-bottom: 10px;color:#008489;">Date Check</h3>
                                     <div class="datecheck">
-                                        <input name = "checkin" type="text" class="user-booking-datecheck-input_in" placeholder="Checkin" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'">
-                                        <input name = "checkout" type="text" class="user-booking-datecheck-input_out" placeholder="Checkout" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'">
+                                        <input name = "checkin" type="text" class="user-booking-datecheck-input_in" placeholder="Checkin" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" required="required">
+                                        <input name = "checkout" type="text" class="user-booking-datecheck-input_out" placeholder="Checkout" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" required="required">
                                     </div>
                                 </div>
                                 <div class="user-booking-guest">
                                     <h3 class="user-booking-guest-heading" style="color:#008489;">Guest</h3>
-                                    <input name = "guest" type="number" class="user-booking-guest-input" min=0>
+                                    <input name = "guest" type="number" class="user-booking-guest-input" min=0 required="required">
                                 </div>
                                 <div class="user-booking-room">
                                     <h3 class="user-booking-room-heading" style="color:#008489;">Room</h3>
-                                    <input name = "room" type="number" class="user-booking-room-input" min=0 max=${hotelDetail.availableRooms}>
+                                    <input name = "room" type="number" class="user-booking-room-input" min=0 max=${hotelDetail.availableRooms} required="required">
                                 </div>
                             </div>
                             <button type="submit" class="checkRoom-btn">Book Hotel</button>

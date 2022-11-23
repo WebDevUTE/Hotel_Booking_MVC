@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +79,9 @@
 
                             <small></small>
                     </div>
-
+					<c:if test="${message eq true }">
+						<span>Email đã đăng kí</span>
+					</c:if>
                     <div class="modal__body-password">
                         <div class="modal__body-rememberpass">
                             <input type="checkbox" name="remember" value="">
