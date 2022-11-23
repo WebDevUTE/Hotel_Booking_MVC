@@ -24,19 +24,23 @@ public class User implements java.io.Serializable {
 	private String userName;
 	private String email;
 	private String password;
+	private String otpCode;
 	private Boolean isAdmin;
+	private Boolean isActivate;
 	private Set<Booking> bookings = new HashSet<Booking>(0);
 	private Set<Rating> ratings = new HashSet<Rating>(0);
 
 	public User() {
 	}
 
-	public User(String userName, String email, String password, Boolean isAdmin, Set<Booking> bookings,
+	public User(String userName, String email, String password, String otpCode, Boolean isAdmin, Boolean isActivate, Set<Booking> bookings,
 			Set<Rating> ratings) {
 		this.userName = userName;
 		this.email = email;
 		this.password = password;
+		this.otpCode = otpCode;
 		this.isAdmin = isAdmin;
+		this.isActivate = isActivate;
 		this.bookings = bookings;
 		this.ratings = ratings;
 	}
@@ -79,6 +83,15 @@ public class User implements java.io.Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	@Column(name = "OTP")
+	public String getOtpCode() {
+		return this.otpCode;
+	}
+
+	public void setOtpCode(String otpCode) {
+		this.otpCode = otpCode;
+	}
 
 	@Column(name = "isAdmin")
 	public Boolean getIsAdmin() {
@@ -87,6 +100,15 @@ public class User implements java.io.Serializable {
 
 	public void setIsAdmin(Boolean isAdmin) {
 		this.isAdmin = isAdmin;
+	}
+	
+	@Column(name = "isActivate")
+	public Boolean getIsActivate() {
+		return this.isActivate;
+	}
+
+	public void setIsActivate(Boolean isActivate) {
+		this.isActivate = isActivate;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")

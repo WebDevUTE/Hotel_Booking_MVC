@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="header">
 			<div class="header-left">
 				<a href="admin" class="logo"> <img src="${pageContext.request.contextPath}/admin_page/assets/img/favicon.png" width="50" height="70" alt="logo"> <span class="logoclass">TripFinder.</span> </a>

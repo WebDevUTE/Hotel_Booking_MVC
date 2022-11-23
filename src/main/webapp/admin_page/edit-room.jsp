@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Hotel Dashboard Template</title>
+	<title>TripFinder Admin</title>
 
 	<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/admin_page/assets/img/favicon.png">
 
@@ -41,18 +41,18 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<form>
+						<form action="${pageContext.request.contextPath}/editHotel" method="post">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Hotel Name</label>
-										<input class="form-control" type="text">
+										<label for="hotelName">Hotel Name</label>
+										<input name="hotelName" class="form-control" type="text">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Hotel Type</label>
-										<select class="form-control" id="sel1" name="sellist1">
+										<label for="hotelType">Hotel Type</label>
+										<select name="hotelType" class="form-control" id="sel1" >
 										
 											<option>Villa</option>
 											<option>Hotel</option>
@@ -65,14 +65,14 @@
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Number of Rooms</label>
-										<input class="form-control" type="text">
+										<label for="rooms" >Number of Rooms</label>
+										<input name="rooms" class="form-control" type="text">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Destinations</label>
-										<select class="form-control" id="sel5" name="sellist1">
+										<label for="destination" >Destinations</label>
+										<select name="destination" class="form-control" id="sel5" >
 											<option>London</option>
 											<option>Paris</option>
 											<option>America</option>
@@ -81,28 +81,29 @@
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Address</label>
-										<input type="text" class="form-control" id="usr">
+										<label for="address">Address</label>
+										<input name="address" type="text" class="form-control" id="usr">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Price per Night</label>
-										<input type="text" class="form-control" id="usr1">
+										<label for="price">Price per Night</label>
+										<input name="price" type="text" class="form-control" id="usr1">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Description</label>
-										<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+										<label for="description">Description</label>
+										<textarea name="description" class="form-control" rows="5" id="comment"></textarea>
 									</div>
 								</div>
 							</div>
+							<button type="submit" class="btn btn-primary buttonedit ml-2">Save</button>
+							<button type="button" class="btn btn-primary buttonedit">Cancel</button>
 						</form>
 					</div>
 				</div>
-				<button type="button" class="btn btn-primary buttonedit ml-2">Save</button>
-				<button type="button" class="btn btn-primary buttonedit">Cancel</button>
+				
 			</div>
 		</div>
 

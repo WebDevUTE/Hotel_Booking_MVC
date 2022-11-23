@@ -1,0 +1,117 @@
+.body {
+	overflow: hidden;
+}
+
+.modal {
+    width: 100%;
+    display: flex;
+}
+.modal__login {
+    width: 45%;
+    margin-top: 132px;
+    padding: 0 132px;
+}
+.modal__logo a {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.active__home {
+    text-decoration: none;
+}
+
+.active__home img {
+    width: 20px;
+    border-style: none;
+}
+
+.active__home h3 {
+    color: rgb(0, 132, 137);
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0px 0px 0px 10px;
+}
+
+.modal__body-welcome {
+    color: rgb(44, 44, 44);
+    font-size: 32px;
+    line-height: 54px;
+    margin-top: 58px;
+    margin-bottom: 0px;
+}
+
+.modal__body-parheading {
+    color: rgb(119, 119, 119);
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 45px;
+    margin-top: 10px;
+}
+
+form .form-control {
+	position: relative;
+}
+
+.form-control .form-control-label {
+    display: block;
+    color: rgb(44, 44, 44);
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.form-control .label-input {
+    margin: 0;
+    list-style: none;
+    min-width: 375px;
+    min-height: 40px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    background-color: var(--while-color);
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 8px 12px;
+}
+
+.form-control.success {
+	border-bottom-color: #2691d9;
+}
+
+.form-control.error {
+	border-bottom-color: #e74c3c;
+}
+
+small {
+	position: absolute;
+	left: 0;
+	top: 70%;
+	margin-top: 3px;
+	color: #e74c3c;
+}
+
+.btn-primary{
+    list-style: none;
+    cursor: pointer;
+    width: 375px;
+    height: 58px;
+    border-radius: 2px;
+    border: 1px solid #d9d9d9;
+    background-color: var(--primary-color);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--while-color);
+    outline: none;
+}
+
+.modal-img {
+    width: 55%;
+}
+
+.modal-img div{
+    background-position: center center;
+    height: 110vh;
+    background-size: cover;
+}
