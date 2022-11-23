@@ -1,20 +1,37 @@
 package com.hotelbooking.controller;
 
 import java.io.IOException;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.mindrot.jbcrypt.BCrypt;
 
 import com.hotelbooking.dao.UserDAO;
+import com.hotelbooking.email_utils.EmailUtility;
 import com.hotelbooking.model.User;
 
 
 @WebServlet(name= "SignupServlet", value = "/signup")
 public class SignupServlet extends HttpServlet {
+	
+	private String host;
+	private String port;
+	private String username;
+	private String mailPassword;
+	
+	public void init() {
+		ServletContext context = getServletContext();
+		host = context.getInitParameter("host");
+		port = context.getInitParameter("port");
+		username = context.getInitParameter("email");
+		mailPassword = context.getInitParameter("pass");
+	}
       
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,10 +43,12 @@ public class SignupServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/public/login.jsp";
+		String url = "/verify";
+		String message = "";
 		String userName = request.getParameter("username");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String randomOtp = EmailUtility.randomOtp();
 		String salt = BCrypt.gensalt(12);
 		String hashPassword = BCrypt.hashpw(password, salt);
 		
@@ -37,7 +56,8 @@ public class SignupServlet extends HttpServlet {
 		
 		User existUser = userDAO.getUserByEmail(email);
 		if(existUser != null) {
-			throw new Error("This email is already taken!");
+			message = "This email is already taken!";
+			url = "/signup";
 		}
 		
 		User user = new User();
@@ -45,17 +65,21 @@ public class SignupServlet extends HttpServlet {
 		user.setEmail(email);
 		user.setPassword(hashPassword);
 		user.setIsAdmin(false);
+		user.setOtpCode(randomOtp);
+		user.setIsActivate(false);
 		
 		try { 
 			userDAO.createUser(user);
-			request.setAttribute("user", user);
+			System.out.println(host + " " + port + " " + username);
+			HttpSession session = request.getSession();
+			session.setAttribute("newUser", user);
+			EmailUtility.sendEmail(host, port, username, mailPassword, email, "Use this otp to activate your account",
+					user.getOtpCode());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		getServletContext()
-				.getRequestDispatcher(url)
-				.forward(request, response);
+		request.setAttribute("message", message);
+		response.sendRedirect(request.getContextPath() + url);
 	}
 
 }

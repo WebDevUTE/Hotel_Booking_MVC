@@ -61,4 +61,19 @@ public class UserDAO {
 		} 
 		return allUsers;
 	}
+	
+	public void updateUser(User user) {
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		EntityTransaction eTrans = em.getTransaction();
+		try {
+			eTrans.begin();
+			em.merge(user);
+			eTrans.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			eTrans.rollback();
+		} finally {
+			em.close();
+		}
+	}
 }

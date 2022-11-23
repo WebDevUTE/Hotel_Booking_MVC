@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/";
+		String message = "";
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -39,20 +40,28 @@ public class LoginServlet extends HttpServlet {
 		
 		UserDAO userDAO = new UserDAO();
 		User user = userDAO.getUserByEmail(email);
+		if(user == null) {
+			message = "This email is not registered!";
+			url = "/login";
+		}
 		
 		boolean isMatchPassword = BCrypt.checkpw(password, user.getPassword());
 		System.out.println(isMatchPassword);
 		if(!isMatchPassword) {
-			url = "/public/login.jsp";
+			message = "Incorrect password";
+			url = "/login";
+		} else if(user.getIsActivate() == false) {
+			message = "Please verify your account!";
+			url = "/login";
 		}
 		else if(user.getIsAdmin() == true) {
 			url = "/admin";
-		}
+		} 
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 		}
-		
+		request.setAttribute("message", message);
 		response.sendRedirect(request.getContextPath() + url);
 	}
 
