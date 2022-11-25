@@ -41,7 +41,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<form action="${pageContext.request.contextPath}/editHotel?hotelId=${hotel.hotelId}" method="post">
+						<form action="editHotel?hotelId=${hotel.hotelId}" method="post" enctype="multipart/form-data">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">
@@ -100,7 +100,7 @@
 									<div class="form-group">
 										<label>File Upload</label>
 										<div class="custom-file">
-										  <input type="file" id="customFile" class="btn btn-primary buttonedit" value="fasfw">
+										  <input name="img" type="file" id="customFile" class="btn btn-primary buttonedit" multiple="multiple" value="fasfw">
 										</div>
 									</div>
 									<div id="selectedBanner"></div>
@@ -136,7 +136,6 @@
 		$(function () {
 			$('#datetimepicker3').datetimepicker({
 				format: 'LT'
-
 			});
 		});
 		$(document).ready(function(){
@@ -159,7 +158,6 @@
 	            return;
 	          }
 	          storedFiles.push(f);
-
 	          var reader = new FileReader();
 	          reader.onload = function (e) {
 	            var html =
