@@ -2,6 +2,7 @@ package com.hotelbooking.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,12 +31,17 @@ public class AdminPageServlet extends HttpServlet {
 		int availableRooms = getAvailableRooms();
 		List<BookingUserInfo> allBookings = getAllBookings();
 		
+		Map<String, Long> hotels = hotelDAO.getNumberOfEachHotel();
+		Map<Integer, Long> hotelss = bookingDAO.getRoomOfEachMonth();
+		request.setAttribute("data", hotels);
+		request.setAttribute("getMonth", hotelss);
 		request.setAttribute("totalBooking", totalBooking);
 		request.setAttribute("available", availableRooms);
 		request.setAttribute("allBookings", allBookings);
 		getServletContext()
 				.getRequestDispatcher(url)
 				.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

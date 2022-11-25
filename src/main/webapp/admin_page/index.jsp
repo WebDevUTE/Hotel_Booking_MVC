@@ -72,18 +72,19 @@
 					<div class="col-md-12 col-lg-6">
 						<div class="card card-chart">
 							<div class="card-header">
-								<h4 class="card-title">VISITORS</h4> </div>
+								<h4 class="card-title">BOOKING ROOM EACH MONTH</h4> </div>
 							<div class="card-body">
-								<div id="line-chart"></div>
+								<canvas id="line-chart" width="400" height="400"></canvas>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-12 col-lg-6">
 						<div class="card card-chart">
 							<div class="card-header">
-								<h4 class="card-title">ROOMS BOOKED</h4> </div>
+								<h4 class="card-title">ROOM</h4> </div>
 							<div class="card-body">
-								<div id="donut-chart"></div>
+								<!-- <div id="donut-chart"></div> -->
+								<canvas id="donut-chart" width="400" height="100"></canvas>
 							</div>
 						</div>
 					</div>
@@ -141,6 +142,50 @@
 	<script src="${pageContext.request.contextPath}/admin_page/assets/plugins/morris/morris.min.js"></script>
 	<script src="${pageContext.request.contextPath}/admin_page/assets/js/chart.morris.js"></script>
 	<script src="${pageContext.request.contextPath}/admin_page/assets/js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js"></script>
+	<script type="text/javascript">
+	const labels_1 = [
+        <c:forEach var="label" items="${data}">'${label.key}', </c:forEach>
+    ];
+    const data_1 = {
+        labels: labels_1,
+        datasets: [{
+            label: 'Số phòng hiện có ở mỗi khách từng quốc gia',
+            data: [<c:forEach var="label" items="${data}">${label.value}, </c:forEach>],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+              ],
+              hoverOffset: 4
+        }]
+    };
+    const config_1 = {
+        type: 'doughnut',
+        data: data_1,
+    };
+    const canvas_1 = document.getElementById('donut-chart')
+    const chart_1 = new Chart(canvas_1, config_1)
+    
+    
+    const labels_2 = [<c:forEach var="month" items="${getMonth}">'Tháng ${month.key}', </c:forEach>];
+    const data_2 = {
+      labels: labels_2,
+      datasets: [{
+        label: 'Room Each Month',
+        data: [<c:forEach var="month" items="${getMonth}">${month.value}, </c:forEach>],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    };
+    const config_2 = {
+   		  type: 'line',
+   		  data: data_2,
+   		};
+	const canvas_2 = document.getElementById('line-chart')
+    const chart_2 = new Chart(canvas_2, config_2)
+	</script>
 </body>
 
 </html>
