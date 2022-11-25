@@ -39,7 +39,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<form action="addHotel" method="post">
+						<form action="addHotel" method="post" enctype="multipart/form-data">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">
@@ -103,7 +103,7 @@
 									<div class="form-group">
 										<label>File Upload</label>
 										<div class="custom-file">
-										  <input type="file" id="customFile" class="btn btn-primary buttonedit">
+										  <input name="img" multiple="multiple" type="file" id="customFile" class="btn btn-primary buttonedit">
 										</div>
 									</div>
 									<div id="selectedBanner"></div>
