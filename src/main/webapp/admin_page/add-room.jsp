@@ -99,6 +99,15 @@
 											name="description" required="required"></textarea>
 									</div>
 								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>File Upload</label>
+										<div class="custom-file">
+										  <input type="file" id="customFile" class="btn btn-primary buttonedit">
+										</div>
+									</div>
+									<div id="selectedBanner"></div>
+								</div>
 							</div>
 							<button type="submit" class="btn btn-primary buttonedit ml-2">Save</button>
 							<button type="button" class="btn btn-primary buttonedit">Cancel</button>
@@ -133,6 +142,36 @@
 				format : 'LT'
 			});
 		});
+		
+		var selDiv = ""
+		var storedFiles = []
+		$(document).ready(function(){
+			$("#customFile").on("change", handleFileSelect);
+			selDiv = $("#selectedBanner")
+		})
+		
+		function handleFileSelect(e){
+			var files = e.target.files;
+	        var filesArr = Array.prototype.slice.call(files);
+	        filesArr.forEach(function (f) {
+	          if (!f.type.match("image.*")) {
+	            return;
+	          }
+	          storedFiles.push(f);
+
+	          var reader = new FileReader();
+	          reader.onload = function (e) {
+	            var html =
+	              '<img src="' +
+	              e.target.result +
+	              "\" data-file='" +
+	              f.name +
+	              "' class='' alt='Category Image' height='150px' width='150px'>";
+	            selDiv.html(html);
+	          };
+	          reader.readAsDataURL(f);
+	        });
+		}
 	</script>
 </body>
 
