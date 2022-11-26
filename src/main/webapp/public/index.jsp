@@ -53,12 +53,12 @@
                         <div class="hero-main">
                             <h1>Latest reviews. Lowest prices.</h1>
                             <p>Compares prices from 200+ booking sites to help you find the lowest price on the right hotel for you.</p>
-                            <form class="hero-form">
+                            <form class="hero-form" action="listRoom" method="get">
                                 <div class="hero-form-input">
                                     <div class="hero-form-item">
                                         <i class="fas fa-map-marker-alt" class="hero-form-icon"></i>
                                         <div class="hero-form-signin">
-                                            <input type="text" placeholder="Search 'Thailand, Asia'">
+                                            <input name="destination" type="text" placeholder="Search 'Lodon, England'">
                                         </div>
                                     </div>
                                     <div class="hero-form-item">

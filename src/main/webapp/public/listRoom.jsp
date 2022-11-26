@@ -53,9 +53,46 @@
                 	</c:forEach>
                 	
                 </div>
-                <div class="load">
-                    <button class="btn-load">Load more</button>
-                </div>
+                <c:if test="${message eq true }">
+                	<span style="font-size: 28px; font-weight: 500; margin-bottom: 50px; display:block;">Could not find suitable hotels. Please find others!</span>
+               		<section class="hero" style="background-color: #008489;">
+	                    <div class="container-fluid">
+	                        <div class="hero-main">
+	                            <h1>Latest reviews. Lowest prices.</h1>
+	                            <p>Compares prices from 200+ booking sites to help you find the lowest price on the right hotel for you.</p>
+	                            <form class="hero-form" action="listRoom" method="get">
+	                                <div class="hero-form-input">
+	                                    <div class="hero-form-item">
+	                                        <i class="fas fa-map-marker-alt" class="hero-form-icon"></i>
+	                                        <div class="hero-form-signin">
+	                                            <input name="destination" type="text" placeholder="Search 'Lodon, England'">
+	                                        </div>
+	                                    </div>
+	                                    <div class="hero-form-item">
+	                                        <i class="fas fa-calendar" class="hero-form-icon"></i>
+	                                        <div class="hero-form-signin">
+	                                            <input type="date">
+	                                            <span>-</span>
+	                                            <input type="date">
+	                                        </div>
+	                                    </div>
+	                                    <div class="hero-form-item">
+	                                        <i class="fas fa-user" class="hero-form-icon"></i>
+	                                        <div class="hero-form-signin">
+	                                            <label for="">Room</label>
+	                                            <input type="number">
+	                                            <span>-</span>
+	                                            <label for="">Guest</label>
+	                                            <input type="number">
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <button type="submit">Find hotel</button>
+	                            </form>
+	                        </div>
+	                    </div>
+	                </section>
+                </c:if>
             </div>
         </section>
     </div>

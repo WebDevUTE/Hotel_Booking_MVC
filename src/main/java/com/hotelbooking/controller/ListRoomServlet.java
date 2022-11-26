@@ -38,17 +38,12 @@ public class ListRoomServlet extends HttpServlet {
 		String destination = request.getParameter("destination");
 		if(destination == null) {
 			listingHotels = hotelDAO.getAllHotel();
+		} else if(destination != null) {
+			listingHotels = hotelDAO.getHotelsByDestination(destination);
 		}
-		
-		else if(destination.equals("London")) {
-			listingHotels = hotelDAO.getHotelsByDestination(1);
-		} 
-		else if(destination.equals("Newyork")) {
-			listingHotels = hotelDAO.getHotelsByDestination(2);
-		} 
-		else if(destination.equals("Paris")) {
-			listingHotels = hotelDAO.getHotelsByDestination(3);
-		} 
+		if(listingHotels == null) {
+			request.setAttribute("message", true);
+		}
 		request.setAttribute("listingHotels", listingHotels);
 	}
 

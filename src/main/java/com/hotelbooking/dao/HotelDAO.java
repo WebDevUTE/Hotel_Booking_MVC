@@ -16,11 +16,12 @@ import javax.persistence.TypedQuery;
 
 public class HotelDAO {
 
-	public List<Hotel> getHotelsByDestination(int desID) {
+	public List<Hotel> getHotelsByDestination(String text) {
 		EntityManager em = DBUtil.getFactory().createEntityManager();
-		String query = "SELECT h FROM Hotel h INNER JOIN h.destination d WHERE d.destinationId=:desID";
+		String query = "SELECT h FROM Hotel h INNER JOIN h.destination d "
+				+ "WHERE d.desName LIKE :text OR h.hotelName LIKE :text OR h.description LIKE :text ";
 		TypedQuery<Hotel> q = em.createQuery(query, Hotel.class);
-		q.setParameter("desID", desID);
+		q.setParameter("text", "%"+text+"%");
 		List<Hotel> hotels;
 		try {
 			hotels = q.getResultList();

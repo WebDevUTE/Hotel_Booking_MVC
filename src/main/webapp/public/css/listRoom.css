@@ -20,6 +20,7 @@
     margin: 0 auto;
     padding: 0 20px;
 }
+
 .header{
     padding: 20px 0;
     border-bottom: 1px solid #90909090;
@@ -295,4 +296,58 @@
 }
 .disable-user{
     display: none;
+}
+
+.hero{
+    padding: 20px 15px;
+    background-color: white;
+}
+.hero-main h1{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.hero-main p{
+    margin-bottom: 20px;
+}
+.hero-form{
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: rgb(247, 247, 247);
+    width: fit-content;
+}
+.hero-form-input{
+    display: flex;
+    align-items: center;
+}
+.hero-form-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    padding-right: 10px;
+    border-right: 1px solid rgba(128, 128, 128, 0.383);
+}
+.hero-form-signin input{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.hero-form-signin span{
+    margin: 0 10px;
+}
+.hero-form button{
+    padding:15px 20px;
+    border: none;
+    outline: none;
+    background-color: #008489;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.hero-form button:hover{
+    background-color: #03999e;
+
 }

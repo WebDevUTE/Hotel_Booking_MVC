@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/privacy.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/footer.css">
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/public/img/logo-alt.980da429.svg" type="image/x-icon">
     <title>Privacy</title>
 </head>
@@ -80,6 +81,7 @@ used when we need to send you promotional materials if you agree to this privacy
                 </div>
             </div>
         </section>
+         <%@ include file='./common/footer.jsp' %>
     </div>
     <script src="${pageContext.request.contextPath}/public/js/privacy.js"></script>
 </body>
