@@ -71,7 +71,7 @@
 									<div class="form-group">
 										<label for="destination" >Destinations</label> 
 										<select class="form-control" name="destination"
-											id="sel5" name="sellist1" required="required">
+											id="sel5" name="destination" required="required">
 											<option>London</option>
 											<option>Paris</option>
 											<option>Newyork</option>

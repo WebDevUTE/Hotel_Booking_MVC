@@ -34,7 +34,7 @@
           <li class="sign-success-container disable-user">
               <ul class="user-panner">
                   <li class="user-panner-item">
-                      <a href="" class="user-panner-item-link">Account Settings</a>
+                      <a href="#" class="user-panner-item-link">${sessionScope.user.userName }</a>
                   </li>
                   <li class="user-panner-item">
 	                  <a href="bookingHistory" class="user-panner-item-link">Booking History</a>
