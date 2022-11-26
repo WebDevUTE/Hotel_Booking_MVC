@@ -1,6 +1,8 @@
 package com.hotelbooking.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -70,5 +72,20 @@ public class BookingDAO {
 		} finally {
 			em.close();
 		}
+	}
+	public Map<Integer, Long> getRoomOfEachMonth(){
+		EntityManager em = DBUtil.getFactory().createEntityManager();
+		String query = "SELECT MONTH(h.checkinDate), SUM(h.rooms) FROM Booking h GROUP BY MONTH(h.checkinDate)";
+		/* TypedQuery<Hotel> q = em.createQuery(query, Hotel.class); */
+		List<Object[]> hotels = em.createQuery(query).getResultList();
+		Map<Integer, Long> data = new HashMap<>();
+		for (Object[] o : hotels) {
+			data.put((Integer) o[0], (Long) o[1]);
+		}
+		/*
+		 * try { hotels = q.getResultList(); if(hotels == null || hotels.isEmpty()) {
+		 * hotels = null; } } finally { em.close(); }
+		 */
+		return data;
 	}
 }
