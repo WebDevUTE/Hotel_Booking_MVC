@@ -50,7 +50,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="hotelType">Hotel Type</label> 
-										<select class="form-control" id="sel1" name="hotelType" required="required">
+										<select name="hotelType" class="form-control" required="required">
 
 											<option>Villa</option>
 											<option>Hotel</option>
@@ -70,33 +70,38 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="destination" >Destinations</label> 
-										<select class="form-control" name="destination"
-											id="sel5" name="destination" required="required">
+										<select name="destination" class="form-control" required="required">
 											<option>London</option>
 											<option>Paris</option>
 											<option>Newyork</option>
+											<option>Japan</option>
+											<option>Korea</option>
+											<option>China</option>
+											<option>Thailand</option>
+											<option>Australia</option>
+											<option>Singapore</option>
+											<option>Canada</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="address">Address</label> 
-										<input type="text" class="form-control" name="address"
-											id="usr" required="required">
+										<input name="address" type="text" class="form-control" required="required">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="price">Price per Night</label> 
-										<input type="text" name="price"
+										<input name="price" type="text"
 											class="form-control" id="usr1" required="required">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="description">Description</label>
-										<textarea class="form-control" rows="5" id="comment"
-											name="description" required="required"></textarea>
+										<textarea name="description" class="form-control" rows="5" id="comment"
+											 required="required"></textarea>
 									</div>
 								</div>
 								<div class="col-md-4">

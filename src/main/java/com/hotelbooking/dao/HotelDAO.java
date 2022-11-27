@@ -36,7 +36,7 @@ public class HotelDAO {
 
 	public List<Hotel> getAllHotel() {
 		EntityManager em = DBUtil.getFactory().createEntityManager();
-		String query = "FROM Hotel h";
+		String query = "SELECT h FROM Hotel h";
 		TypedQuery<Hotel> q = em.createQuery(query, Hotel.class);
 		List<Hotel> hotels;
 		try {

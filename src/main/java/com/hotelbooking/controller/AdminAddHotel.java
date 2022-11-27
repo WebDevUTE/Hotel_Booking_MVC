@@ -42,6 +42,7 @@ public class AdminAddHotel extends HttpServlet {
 
 		Hotel hotel = new Hotel();
 		int rooms = Integer.parseInt(request.getParameter("rooms"));
+		System.out.println("sdfffffffff " + request.getParameter("destination"));
 
 		Category category = categoryDAO.getCategoryFromName(request.getParameter("hotelType"));
 		Destination des = desDAO.getDesFromName(request.getParameter("destination"));

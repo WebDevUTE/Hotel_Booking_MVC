@@ -74,7 +74,14 @@
 										<select name="destination" class="form-control" id="sel5" >
 											<option value="London">London</option>
 											<option value="Paris">Paris</option>
-											<option value="America">America</option>
+											<option value="Newyork">Newyork</option>
+											<option value="Japan">Japan</option>
+											<option value="Korea">Korea</option>
+											<option value="China">China</option>
+											<option value="Thailand">Thailand</option>
+											<option value="Australia">Australia</option>
+											<option value="Singapore">Singapore</option>
+											<option value="JaCanadapan">Canada</option>
 										</select>
 									</div>
 								</div>
